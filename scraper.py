@@ -19,16 +19,41 @@ def get_ssl_context():
 def scrape_sih_2026():
     """Scrapes SIH 2026 problem statements and live submissions count from sih.gov.in."""
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Fetching SIH 2026 Problem Statements from {SIH_URL}...")
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.9',
+    import http.cookiejar
+    
+    cj = http.cookiejar.CookieJar()
+    ctx = get_ssl_context()
+    https_handler = urllib.request.HTTPSHandler(context=ctx)
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj), https_handler)
+    
+    common_headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9,hi;q=0.8',
+        'Sec-Ch-Ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'Sec-Ch-Ua-Mobile': '?0',
+        'Sec-Ch-Ua-Platform': '"Windows"',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-User': '?1',
+        'Upgrade-Insecure-Requests': '1'
     }
     
-    req = urllib.request.Request(SIH_URL, headers=headers)
-    ctx = get_ssl_context()
+    # Step 1: Establish session on root domain to get XSRF and laravel_session
+    try:
+        req_root = urllib.request.Request('https://sih.gov.in/', headers=common_headers)
+        with opener.open(req_root, timeout=15) as r_root:
+            pass
+    except Exception as e:
+        print(f"Notice: Root session init failed ({e}), trying direct fetch...")
+
+    # Step 2: Fetch the actual problem statements page with session cookies and referer
+    ps_headers = dict(common_headers)
+    ps_headers['Referer'] = 'https://sih.gov.in/'
     
-    with urllib.request.urlopen(req, context=ctx, timeout=30) as response:
+    req = urllib.request.Request(SIH_URL, headers=ps_headers)
+    with opener.open(req, timeout=30) as response:
         html = response.read().decode('utf-8', errors='ignore')
     
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Page fetched successfully ({len(html):,} bytes). Parsing DOM...")
