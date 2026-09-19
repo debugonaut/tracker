@@ -144,6 +144,27 @@
       </table>
     </div>
 
+    <!-- Pagination Controls -->
+    <div class="pagination-controls" id="paginationControls" style="display:none;">
+      <div class="page-info">
+        Showing <span id="pageStart">0</span> to <span id="pageEnd">0</span> of <strong id="pageTotal">0</strong>
+      </div>
+      <div class="page-size">
+        <label for="pageSizeSelect">Per page:</label>
+        <select id="pageSizeSelect">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="500">500</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="page-buttons">
+        <button id="prevPageBtn" class="retro-btn btn-sm" disabled>Prev</button>
+        <span id="pageIndicator" class="page-indicator">Page 1 of 1</span>
+        <button id="nextPageBtn" class="retro-btn btn-sm" disabled>Next</button>
+      </div>
+    </div>
+
     <!-- Simple Detail Box (Inline or Modal) -->
     <div id="detailBox" class="detail-box" style="display:none;">
       <div class="detail-box-header">

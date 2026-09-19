@@ -791,3 +791,33 @@ select {
     padding: 12px 6px;
   }
 }
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.page-info {
+  flex: 1;
+}
+.page-size {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.page-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.page-indicator {
+  font-weight: bold;
+}

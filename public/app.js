@@ -8,6 +8,8 @@
   let showSavedOnly = false;
   let showActiveOnly = false;
   let snapshotCounts = JSON.parse(localStorage.getItem('sih2026_snapshot_counts') || 'null');
+  let currentPage = 1;
+  let itemsPerPage = 100;
 
   const MOON_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
   const SUN_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
@@ -39,6 +41,16 @@
   const markSeenBtn = document.getElementById('markSeenBtn');
 
   const tableBody = document.getElementById('tableBody');
+
+  // Pagination Elements
+  const paginationControls = document.getElementById('paginationControls');
+  const pageStart = document.getElementById('pageStart');
+  const pageEnd = document.getElementById('pageEnd');
+  const pageTotal = document.getElementById('pageTotal');
+  const pageSizeSelect = document.getElementById('pageSizeSelect');
+  const prevPageBtn = document.getElementById('prevPageBtn');
+  const nextPageBtn = document.getElementById('nextPageBtn');
+  const pageIndicator = document.getElementById('pageIndicator');
 
   // Detail Box Elements
   const detailBox = document.getElementById('detailBox');
@@ -82,6 +94,7 @@
     document.documentElement.setAttribute('data-theme', nextTheme);
     localStorage.setItem('sih2026_theme', nextTheme);
     updateThemeToggleBtn(nextTheme);
+    if (window.va) window.va('event', { name: 'Toggle_Theme', data: { theme: nextTheme } });
   }
 
   function setupListeners() {
@@ -89,12 +102,61 @@
       themeToggleBtn.addEventListener('click', toggleTheme);
     }
 
-    searchInput.addEventListener('input', render);
-    catSelect.addEventListener('change', render);
-    themeSelect.addEventListener('change', render);
-    orgSelect.addEventListener('change', render);
-    compSelect.addEventListener('change', render);
-    sortSelect.addEventListener('change', render);
+    searchInput.addEventListener('input', () => { currentPage = 1; render(); });
+    searchInput.addEventListener('change', (e) => {
+      if (window.va && e.target.value.trim()) window.va('event', { name: 'Search', data: { query: e.target.value.trim() } });
+    });
+    catSelect.addEventListener('change', (e) => {
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'Filter_Category', data: { category: e.target.value } });
+      render();
+    });
+    themeSelect.addEventListener('change', (e) => {
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'Filter_Theme', data: { theme: e.target.value } });
+      render();
+    });
+    orgSelect.addEventListener('change', (e) => {
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'Filter_Org', data: { org: e.target.value } });
+      render();
+    });
+    compSelect.addEventListener('change', (e) => {
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'Filter_Comp', data: { comp: e.target.value } });
+      render();
+    });
+    sortSelect.addEventListener('change', (e) => {
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'Sort', data: { by: e.target.value } });
+      render();
+    });
+
+    pageSizeSelect.addEventListener('change', (e) => {
+      const val = e.target.value;
+      itemsPerPage = val === 'all' ? 'all' : parseInt(val, 10);
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'Change_Page_Size', data: { size: val } });
+      render();
+    });
+
+    prevPageBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    nextPageBtn.addEventListener('click', () => {
+      const list = getFilteredList();
+      const maxPages = itemsPerPage === 'all' ? 1 : Math.ceil(list.length / itemsPerPage);
+      if (currentPage < maxPages) {
+        currentPage++;
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
 
     resetBtn.addEventListener('click', resetFilters);
     refreshBtn.addEventListener('click', refreshLive);
@@ -103,6 +165,8 @@
     viewSavedLink.addEventListener('click', (e) => {
       e.preventDefault();
       showSavedOnly = !showSavedOnly;
+      currentPage = 1;
+      if (window.va) window.va('event', { name: 'View_Saved_Toggle', data: { enabled: showSavedOnly } });
       viewSavedLink.textContent = showSavedOnly ? 'Show All Statements' : `Show Saved Only (${bookmarks.size})`;
       viewSavedLink.style.fontWeight = showSavedOnly ? 'bold' : 'normal';
       render();
@@ -112,6 +176,8 @@
       viewActiveLink.addEventListener('click', (e) => {
         e.preventDefault();
         showActiveOnly = !showActiveOnly;
+        currentPage = 1;
+        if (window.va) window.va('event', { name: 'View_Active_Toggle', data: { enabled: showActiveOnly } });
         viewActiveLink.style.textDecoration = showActiveOnly ? 'none' : 'underline';
         viewActiveLink.style.backgroundColor = showActiveOnly ? '#d4ecd4' : 'transparent';
         render();
@@ -162,6 +228,7 @@
       if (!res.ok) throw new Error(data.message || 'Refresh failed');
       
       if (data.data) {
+        if (window.va) window.va('event', { name: 'Live_Refresh' });
         rawData = data.data;
         problemStatements = rawData.problem_statements || [];
         metaStats.textContent = `${rawData.total_problem_statements} Statements | ${rawData.total_submissions.toLocaleString()} Submissions`;
@@ -335,10 +402,36 @@
 
     if (list.length === 0) {
       tableBody.innerHTML = `<tr><td colspan="10" class="text-center" style="padding: 24px; color: #666;">No problem statements match the current filters.</td></tr>`;
+      paginationControls.style.display = 'none';
       return;
     }
 
-    tableBody.innerHTML = list.map((p, idx) => {
+    paginationControls.style.display = 'flex';
+    
+    let displayList = list;
+    let totalPages = 1;
+    let startIdx = 0;
+    let endIdx = list.length;
+
+    if (itemsPerPage !== 'all') {
+      totalPages = Math.ceil(list.length / itemsPerPage);
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+      
+      startIdx = (currentPage - 1) * itemsPerPage;
+      endIdx = Math.min(startIdx + itemsPerPage, list.length);
+      displayList = list.slice(startIdx, endIdx);
+    }
+
+    pageStart.textContent = startIdx + 1;
+    pageEnd.textContent = endIdx;
+    pageTotal.textContent = list.length;
+    pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+    
+    prevPageBtn.disabled = currentPage === 1;
+    nextPageBtn.disabled = currentPage === totalPages;
+
+    tableBody.innerHTML = displayList.map((p, idx) => {
       const isFav = bookmarks.has(p.id);
       const isSoft = (p.category || '').toLowerCase() === 'software';
       const typePill = isSoft ? '<span class="type-pill type-software">Software</span>' : '<span class="type-pill type-hardware">Hardware</span>';
@@ -351,7 +444,7 @@
         ? `<span class="sub-delta" title="+${p.effective_delta} new idea${p.effective_delta > 1 ? 's' : ''} submitted since last check">+${p.effective_delta}</span>`
         : '';
 
-      const sNo = escapeHtml(p.sno || (idx + 1));
+      const sNo = escapeHtml(p.sno || (startIdx + idx + 1));
 
       return `
         <tr data-id="${p.id}">
@@ -395,6 +488,7 @@
   function showDetail(id) {
     const p = problemStatements.find(item => item.id === id);
     if (!p) return;
+    if (window.va) window.va('event', { name: 'View_PS_Detail', data: { ps_id: p.id, theme: p.theme, org: p.organization } });
 
     detailBoxTitle.innerHTML = `<strong>S.No. ${escapeHtml(p.sno || p.id)} | ${escapeHtml(p.ps_number || p.id)}</strong> - ${escapeHtml(p.title)}`;
     detailCategory.textContent = p.category;
@@ -424,8 +518,10 @@
   function toggleBookmark(id) {
     if (bookmarks.has(id)) {
       bookmarks.delete(id);
+      if (window.va) window.va('event', { name: 'Bookmark_Remove', data: { ps_id: id } });
     } else {
       bookmarks.add(id);
+      if (window.va) window.va('event', { name: 'Bookmark_Add', data: { ps_id: id } });
     }
     localStorage.setItem('sih2026_bookmarks', JSON.stringify([...bookmarks]));
     updateSavedCount();
@@ -445,6 +541,9 @@
     sortSelect.value = 'most';
     showSavedOnly = false;
     showActiveOnly = false;
+    currentPage = 1;
+    itemsPerPage = 100;
+    pageSizeSelect.value = '100';
     viewSavedLink.textContent = `Show Saved Only (${bookmarks.size})`;
     viewSavedLink.style.fontWeight = 'normal';
     if (viewActiveLink) {
@@ -455,6 +554,7 @@
   }
 
   function exportCSV() {
+    if (window.va) window.va('event', { name: 'Export_CSV' });
     const list = getFilteredList();
     if (!list || list.length === 0) {
       alert("No problem statements to export.");
