@@ -2,12 +2,14 @@ FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PORT=8080
+    PORT=8080 \
+    TZ="Asia/Kolkata"
 
 WORKDIR /app
 
-# Install runtime and build dependencies for lxml
+# Install runtime and build dependencies for lxml and timezone
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    tzdata \
     libxml2 \
     libxslt1.1 \
     gcc \

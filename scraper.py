@@ -3,8 +3,10 @@ import ssl
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import lxml.html
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 DATA_FILE = os.path.join(DATA_DIR, 'sih2026_data.json')
@@ -238,9 +240,10 @@ def scrape_sih_2026(save_to_disk=True, target_file=None):
     top_submitted = [{'id': p['id'], 'title': p['title'], 'count': p['submitted_count'], 'theme': p['theme']} for p in sorted_by_submissions[:5]]
     least_submitted = [{'id': p['id'], 'title': p['title'], 'count': p['submitted_count'], 'theme': p['theme']} for p in sorted_by_submissions if p['submitted_count'] >= 0][-5:]
     
+    now_ist = datetime.now(IST)
     payload = {
-        'last_updated': datetime.now().isoformat(),
-        'last_updated_human': datetime.now().strftime('%d %B %Y, %I:%M:%S %p IST'),
+        'last_updated': now_ist.isoformat(),
+        'last_updated_human': now_ist.strftime('%d %B %Y, %I:%M:%S %p IST'),
         'total_problem_statements': len(problem_statements),
         'total_submissions': total_submissions,
         'total_capacity': total_capacity,
