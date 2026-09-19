@@ -3,7 +3,7 @@ name: Auto-Sync SIH Submissions
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *' # Automatically runs every 30 minutes
+    - cron: '*/30 * * * *'
   push:
     paths:
       - '.github/workflows/update.yml'
@@ -26,10 +26,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Test Connection to SIH
+      - name: Check SIH Status Code
         run: |
-          echo "=== Testing direct HTTP response from GitHub Actions runner ==="
-          curl -s -k -I -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" -H "Referer: https://sih.gov.in/" https://sih.gov.in/sih2026PS | head -n 10 || true
+          CODE=$(curl -s -k -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" -H "Referer: https://sih.gov.in/" https://sih.gov.in/sih2026PS)
+          echo "GitHub Actions Runner received HTTP Status: $CODE"
+          if [ "$CODE" = "403" ]; then
+            echo "CONFIRMED: Government portal returned 403 Forbidden to GitHub Actions (Azure Datacenter IP)."
+          fi
 
       - name: Run Scraper
         run: |
