@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIH 2026 Problem Statements & Live Submissions</title>
   <link rel="stylesheet" href="index.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('sih2026_theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -18,6 +28,7 @@
       </div>
       <div class="top-nav-meta">
         <span id="metaStats">Loading...</span>
+        <button id="themeToggleBtn" class="retro-btn btn-sm" title="Toggle Dark/Light Mode">🌙 Dark</button>
         <button id="refreshBtn" class="retro-btn btn-sm">Refresh Data</button>
         <button id="exportBtn" class="retro-btn btn-sm">Export CSV</button>
       </div>

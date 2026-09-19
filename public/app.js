@@ -13,6 +13,7 @@
   const metaStats = document.getElementById('metaStats');
   const refreshBtn = document.getElementById('refreshBtn');
   const exportBtn = document.getElementById('exportBtn');
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
 
   const searchInput = document.getElementById('searchInput');
   const catSelect = document.getElementById('catSelect');
@@ -52,12 +53,41 @@
   init();
 
   function init() {
+    initTheme();
     updateSavedCount();
     setupListeners();
     fetchData();
   }
 
+  function initTheme() {
+    const curTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateThemeToggleBtn(curTheme);
+  }
+
+  function updateThemeToggleBtn(theme) {
+    if (!themeToggleBtn) return;
+    if (theme === 'dark') {
+      themeToggleBtn.textContent = '☀️ Light';
+      themeToggleBtn.title = 'Switch to Light Theme';
+    } else {
+      themeToggleBtn.textContent = '🌙 Dark';
+      themeToggleBtn.title = 'Switch to Dark Theme';
+    }
+  }
+
+  function toggleTheme() {
+    const curTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const nextTheme = curTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('sih2026_theme', nextTheme);
+    updateThemeToggleBtn(nextTheme);
+  }
+
   function setupListeners() {
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
     searchInput.addEventListener('input', render);
     catSelect.addEventListener('change', render);
     themeSelect.addEventListener('change', render);
