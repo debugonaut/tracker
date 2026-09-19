@@ -67,9 +67,7 @@
 
     resetBtn.addEventListener('click', resetFilters);
     refreshBtn.addEventListener('click', refreshLive);
-    exportBtn.addEventListener('click', () => {
-      window.location.href = '/api/export';
-    });
+    exportBtn.addEventListener('click', exportCSV);
 
     viewSavedLink.addEventListener('click', (e) => {
       e.preventDefault();
@@ -419,6 +417,65 @@
       viewActiveLink.style.backgroundColor = 'transparent';
     }
     render();
+  }
+
+  function exportCSV() {
+    const list = getFilteredList();
+    if (!list || list.length === 0) {
+      alert("No problem statements to export.");
+      return;
+    }
+
+    // Only export table columns - clean data without external Google Drive or video links
+    const headers = [
+      'PS ID',
+      'Title',
+      'Category',
+      'Theme',
+      'Organization',
+      'Department',
+      'Submitted Ideas',
+      'Max Capacity',
+      'Slots Left',
+      'Fill %',
+      'Competition Level',
+      'Deadline'
+    ];
+
+    const rows = [headers];
+
+    list.forEach(p => {
+      const clean = (val) => {
+        if (val === null || val === undefined) return '';
+        return String(val).replace(/[\r\n]+/g, ' ').replace(/"/g, '""').trim();
+      };
+
+      rows.push([
+        clean(p.ps_number || p.id),
+        clean(p.title),
+        clean(p.category),
+        clean(p.theme),
+        clean(p.organization),
+        clean(p.department || p.organization),
+        p.submitted_count !== undefined ? p.submitted_count : 0,
+        p.max_capacity !== undefined ? p.max_capacity : 500,
+        p.slots_left !== undefined ? p.slots_left : 0,
+        `${p.fill_percentage || 0}%`,
+        clean(p.competition),
+        clean(p.deadline || '30 September 2026')
+      ]);
+    });
+
+    const csvContent = '\uFEFF' + rows.map(r => r.map(cell => `"${cell}"`).join(',')).join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'sih2026_problem_statements.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   }
 
   function escapeHtml(str) {

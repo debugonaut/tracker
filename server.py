@@ -142,33 +142,34 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
             output = io.StringIO()
             writer = csv.writer(output)
             
-            # Header
+            # Header - Only export table columns (no external Google Drive or video links)
             writer.writerow([
-                'PS ID', 'PS Number', 'Title', 'Category', 'Theme', 'Organization',
-                'Department', 'Submitted Ideas', 'Max Capacity', 'Fill %', 'Slots Left',
-                'Competition Level', 'Deadline', 'YouTube Link', 'Dataset Link'
+                'PS ID', 'Title', 'Category', 'Theme', 'Organization',
+                'Department', 'Submitted Ideas', 'Max Capacity', 'Slots Left',
+                'Fill %', 'Competition Level', 'Deadline'
             ])
 
             for p in ps_list:
+                title = str(p.get('title', '')).replace('\r', ' ').replace('\n', ' ').strip()
+                org = str(p.get('organization', '')).replace('\r', ' ').replace('\n', ' ').strip()
+                dept = str(p.get('department', '') or p.get('organization', '')).replace('\r', ' ').replace('\n', ' ').strip()
+                theme = str(p.get('theme', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 writer.writerow([
-                    p.get('id', ''),
-                    p.get('ps_number', ''),
-                    p.get('title', ''),
+                    p.get('ps_number') or p.get('id', ''),
+                    title,
                     p.get('category', ''),
-                    p.get('theme', ''),
-                    p.get('organization', ''),
-                    p.get('department', ''),
+                    theme,
+                    org,
+                    dept,
                     p.get('submitted_count', 0),
                     p.get('max_capacity', 500),
-                    f"{p.get('fill_percentage', 0)}%",
                     p.get('slots_left', 0),
+                    f"{p.get('fill_percentage', 0)}%",
                     p.get('competition', ''),
-                    p.get('deadline', ''),
-                    p.get('youtube_link', ''),
-                    p.get('dataset_link', '')
+                    p.get('deadline', '30 September 2026')
                 ])
 
-            csv_bytes = output.getvalue().encode('utf-8')
+            csv_bytes = output.getvalue().encode('utf-8-sig')
             self.send_response(200)
             self.send_header('Content-Type', 'text/csv; charset=utf-8')
             self.send_header('Content-Disposition', 'attachment; filename="sih2026_problem_statements.csv"')
