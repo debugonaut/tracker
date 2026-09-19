@@ -117,7 +117,11 @@
         alert(`Refreshed! Found ${rawData.total_submissions.toLocaleString()} total live submissions.`);
       }
     } catch (err) {
-      alert(`Refresh error: ${err.message}`);
+      if (err.message && (err.message.includes('403') || err.message.includes('Forbidden'))) {
+        alert("Live Refresh Notice: The official Government of India portal (sih.gov.in) restricts automated scraping from cloud datacenters (403 Forbidden). When running locally in India (http://localhost:5050), live sync works directly. You can also update the cloud data anytime by running 'python3 scraper.py' locally and pushing.");
+      } else {
+        alert(`Refresh error: ${err.message}`);
+      }
     } finally {
       refreshBtn.disabled = false;
       refreshBtn.textContent = 'Refresh Data';
