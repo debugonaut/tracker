@@ -125,16 +125,17 @@ class handler(BaseHTTPRequestHandler):
             writer = csv.writer(output)
             # Only export table columns - clean data without external Google Drive or video links
             writer.writerow([
-                'PS ID', 'Title', 'Category', 'Theme', 'Organization',
+                'S.No.', 'PS ID', 'Problem Statement Title', 'Category', 'Theme', 'Organization',
                 'Department', 'Submitted Ideas', 'Max Capacity', 'Slots Left',
                 'Fill %', 'Competition Level', 'Deadline'
             ])
-            for p in data.get('problem_statements', []):
+            for idx, p in enumerate(data.get('problem_statements', []), start=1):
                 title = str(p.get('title', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 org = str(p.get('organization', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 dept = str(p.get('department', '') or p.get('organization', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 theme = str(p.get('theme', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 writer.writerow([
+                    p.get('sno') or idx,
                     p.get('ps_number') or p.get('id', ''),
                     title,
                     p.get('category', ''),

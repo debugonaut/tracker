@@ -343,7 +343,7 @@ select {
 
 .retro-table {
   width: 100%;
-  min-width: 840px;
+  min-width: 890px;
   border-collapse: collapse;
   font-size: 11px;
 }
@@ -384,6 +384,13 @@ select {
 }
 
 /* Table Cells */
+.s-no-cell {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 .ps-id-tag {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;

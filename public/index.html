@@ -91,8 +91,8 @@
             <option value="most" selected>Most Submissions (Maximum First)</option>
             <option value="least">Least Submissions (Minimum First)</option>
             <option value="active">🔥 Recently Active (+New Ideas)</option>
-            <option value="id_asc">PS ID (Ascending)</option>
-            <option value="id_desc">PS ID (Descending)</option>
+            <option value="id_asc">S.No. / PS ID (1 &rarr; 240)</option>
+            <option value="id_desc">S.No. / PS ID (240 &rarr; 1)</option>
             <option value="title">Title (A-Z)</option>
           </select>
         </div>
@@ -124,7 +124,8 @@
       <table class="retro-table" id="psTable">
         <thead>
           <tr>
-            <th width="32">Fav</th>
+            <th width="48" class="text-center">S.No.</th>
+            <th width="32" class="text-center">Fav</th>
             <th width="90">PS ID</th>
             <th>Problem Statement Title</th>
             <th width="85">Type</th>
@@ -137,7 +138,7 @@
         </thead>
         <tbody id="tableBody">
           <tr>
-            <td colspan="9" class="text-center" style="padding: 30px;">Loading database...</td>
+            <td colspan="10" class="text-center" style="padding: 30px;">Loading database...</td>
           </tr>
         </tbody>
       </table>

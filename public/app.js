@@ -149,7 +149,7 @@
       populateDropdowns(problemStatements);
       render();
     } catch (err) {
-      tableBody.innerHTML = `<tr><td colspan="9" class="text-center" style="color:red; padding:20px;">Error loading data: ${escapeHtml(err.message)}</td></tr>`;
+      tableBody.innerHTML = `<tr><td colspan="10" class="text-center" style="color:red; padding:20px;">Error loading data: ${escapeHtml(err.message)}</td></tr>`;
     }
   }
 
@@ -302,12 +302,13 @@
       if (comp !== 'all' && p.competition !== comp) return false;
 
       if (q) {
+        const snoMatch = p.sno && (String(p.sno) === q || `sno ${p.sno}`.includes(q) || `s.no. ${p.sno}`.includes(q));
         const idMatch = (p.id && p.id.toLowerCase().includes(q)) || (p.ps_number && p.ps_number.toLowerCase().includes(q));
         const titleMatch = p.title && p.title.toLowerCase().includes(q);
         const orgMatch = p.organization && p.organization.toLowerCase().includes(q);
         const themeMatch = p.theme && p.theme.toLowerCase().includes(q);
         const descMatch = p.description && p.description.toLowerCase().includes(q);
-        if (!idMatch && !titleMatch && !orgMatch && !themeMatch && !descMatch) return false;
+        if (!idMatch && !snoMatch && !titleMatch && !orgMatch && !themeMatch && !descMatch) return false;
       }
       return true;
     });
@@ -318,8 +319,8 @@
           return (b.effective_delta || 0) - (a.effective_delta || 0) || b.submitted_count - a.submitted_count;
         case 'least': return a.submitted_count - b.submitted_count;
         case 'most': return b.submitted_count - a.submitted_count;
-        case 'id_asc': return (parseInt(a.id, 10) || 0) - (parseInt(b.id, 10) || 0);
-        case 'id_desc': return (parseInt(b.id, 10) || 0) - (parseInt(a.id, 10) || 0);
+        case 'id_asc': return (parseInt(a.sno || a.id, 10) || 0) - (parseInt(b.sno || b.id, 10) || 0);
+        case 'id_desc': return (parseInt(b.sno || b.id, 10) || 0) - (parseInt(a.sno || a.id, 10) || 0);
         case 'title': return a.title.localeCompare(b.title);
         default: return 0;
       }
@@ -333,11 +334,11 @@
     resultCount.textContent = list.length;
 
     if (list.length === 0) {
-      tableBody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding: 24px; color: #666;">No problem statements match the current filters.</td></tr>`;
+      tableBody.innerHTML = `<tr><td colspan="10" class="text-center" style="padding: 24px; color: #666;">No problem statements match the current filters.</td></tr>`;
       return;
     }
 
-    tableBody.innerHTML = list.map(p => {
+    tableBody.innerHTML = list.map((p, idx) => {
       const isFav = bookmarks.has(p.id);
       const isSoft = (p.category || '').toLowerCase() === 'software';
       const typePill = isSoft ? '<span class="type-pill type-software">Software</span>' : '<span class="type-pill type-hardware">Hardware</span>';
@@ -350,8 +351,11 @@
         ? `<span class="sub-delta" title="+${p.effective_delta} new idea${p.effective_delta > 1 ? 's' : ''} submitted since last check">+${p.effective_delta}</span>`
         : '';
 
+      const sNo = escapeHtml(p.sno || (idx + 1));
+
       return `
         <tr data-id="${p.id}">
+          <td class="text-center s-no-cell">${sNo}</td>
           <td class="text-center">
             <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${p.id}" title="Bookmark">&#9733;</button>
           </td>
@@ -392,7 +396,7 @@
     const p = problemStatements.find(item => item.id === id);
     if (!p) return;
 
-    detailBoxTitle.innerHTML = `<strong>${escapeHtml(p.ps_number || p.id)}</strong> - ${escapeHtml(p.title)}`;
+    detailBoxTitle.innerHTML = `<strong>S.No. ${escapeHtml(p.sno || p.id)} | ${escapeHtml(p.ps_number || p.id)}</strong> - ${escapeHtml(p.title)}`;
     detailCategory.textContent = p.category;
 
     const deltaBadge = p.effective_delta > 0 
@@ -459,8 +463,9 @@
 
     // Only export table columns - clean data without external Google Drive or video links
     const headers = [
+      'S.No.',
       'PS ID',
-      'Title',
+      'Problem Statement Title',
       'Category',
       'Theme',
       'Organization',
@@ -475,13 +480,14 @@
 
     const rows = [headers];
 
-    list.forEach(p => {
+    list.forEach((p, idx) => {
       const clean = (val) => {
         if (val === null || val === undefined) return '';
         return String(val).replace(/[\r\n]+/g, ' ').replace(/"/g, '""').trim();
       };
 
       rows.push([
+        p.sno || (idx + 1),
         clean(p.ps_number || p.id),
         clean(p.title),
         clean(p.category),
