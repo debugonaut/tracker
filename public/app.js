@@ -114,7 +114,11 @@
         lastUpdatedText.textContent = rawData.last_updated_human || 'Just now';
         populateDropdowns(problemStatements);
         render();
-        alert(`Refreshed! Found ${rawData.total_submissions.toLocaleString()} total live submissions.`);
+        if (data.status === 'notice') {
+          alert(data.message);
+        } else {
+          alert(`Refreshed! Found ${rawData.total_submissions.toLocaleString()} total live submissions.`);
+        }
       }
     } catch (err) {
       if (err.message && (err.message.includes('403') || err.message.includes('Forbidden'))) {

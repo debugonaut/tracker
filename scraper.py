@@ -16,7 +16,7 @@ def get_ssl_context():
     ctx.verify_mode = ssl.CERT_NONE
     return ctx
 
-def scrape_sih_2026():
+def scrape_sih_2026(save_to_disk=True, target_file=None):
     """Scrapes SIH 2026 problem statements and live submissions count from sih.gov.in."""
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Fetching SIH 2026 Problem Statements from {SIH_URL}...")
     import http.cookiejar
@@ -229,11 +229,23 @@ def scrape_sih_2026():
         'problem_statements': problem_statements
     }
     
-    os.makedirs(DATA_DIR, exist_ok=True)
-    with open(DATA_FILE, 'w', encoding='utf-8') as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
-        
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] Saved {len(problem_statements)} problem statements to {DATA_FILE}")
+    if save_to_disk:
+        dest_path = target_file if target_file else DATA_FILE
+        try:
+            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+            with open(dest_path, 'w', encoding='utf-8') as f:
+                json.dump(payload, f, indent=2, ensure_ascii=False)
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Saved {len(problem_statements)} problem statements to {dest_path}")
+        except OSError as e:
+            print(f"Notice: Cannot save to {dest_path} ({e}). Trying /tmp/sih2026_data.json...")
+            try:
+                tmp_path = '/tmp/sih2026_data.json'
+                with open(tmp_path, 'w', encoding='utf-8') as f:
+                    json.dump(payload, f, indent=2, ensure_ascii=False)
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Saved fallback copy to {tmp_path}")
+            except Exception as e_tmp:
+                print(f"Notice: Read-only environment, skipping disk cache: {e_tmp}")
+
     return payload
 
 if __name__ == '__main__':

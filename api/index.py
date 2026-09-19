@@ -32,12 +32,13 @@ def get_current_data():
     return scrape_and_cache()
 
 def scrape_and_cache():
-    data = scrape_sih_2026()
+    # Set save_to_disk=False to avoid writing to read-only /var/task bundle on Vercel
+    data = scrape_sih_2026(save_to_disk=False)
     try:
         with open(TMP_DATA_FILE, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"Notice: Could not cache to {TMP_DATA_FILE}: {e}")
     return data
 
 class handler(BaseHTTPRequestHandler):
@@ -106,7 +107,16 @@ class handler(BaseHTTPRequestHandler):
                 'data': data
             })
         except Exception as e:
-            self.send_json({'status': 'error', 'message': str(e)}, status=500)
+            err_msg = str(e)
+            if '403' in err_msg or 'Forbidden' in err_msg:
+                current_data = get_current_data()
+                self.send_json({
+                    'status': 'notice',
+                    'message': "Notice: The official Government of India portal (sih.gov.in) restricts scraping directly from cloud servers (403 Forbidden). Live data is automatically kept up-to-date every 30 minutes by your local background sync.",
+                    'data': current_data
+                })
+            else:
+                self.send_json({'status': 'error', 'message': err_msg}, status=500)
 
     def handle_export(self):
         try:
