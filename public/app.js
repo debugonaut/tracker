@@ -78,7 +78,10 @@
 
   async function fetchData() {
     try {
-      const res = await fetch('/api/data');
+      let res = await fetch('/api/data');
+      if (!res.ok) {
+        res = await fetch('/data/sih2026_data.json');
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       rawData = await res.json();
       problemStatements = rawData.problem_statements || [];
