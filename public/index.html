@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIH 2026 Problem Statements & Live Submissions</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <div class="site-title">
+        <span class="logo-icon">&#128196;</span>
+        <strong>SIH 2026</strong> Problem Statements Database
+        <span class="live-tag">LIVE</span>
+      </div>
+      <div class="top-nav-meta">
+        <span id="metaStats">Loading...</span>
+        <button id="refreshBtn" class="retro-btn btn-sm">Refresh Data</button>
+        <button id="exportBtn" class="retro-btn btn-sm">Export CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+
+    <!-- Simple Filter Box -->
+    <div class="filter-panel">
+      <div class="filter-row">
+        <div class="filter-group filter-search">
+          <label for="searchInput">Search:</label>
+          <input type="text" id="searchInput" placeholder="Search ID (e.g. 26001), keywords, title, ministry..." autocomplete="off">
+        </div>
+
+        <div class="filter-group">
+          <label for="catSelect">Category:</label>
+          <select id="catSelect">
+            <option value="all">All Categories</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="themeSelect">Theme:</label>
+          <select id="themeSelect">
+            <option value="all">All Themes</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="orgSelect">Organization:</label>
+          <select id="orgSelect">
+            <option value="all">All Organizations</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="compSelect">Submissions:</label>
+          <select id="compSelect">
+            <option value="all">All Levels</option>
+            <option value="Low">&lt; 50 (Low Competition)</option>
+            <option value="Medium">50 - 150 (Medium)</option>
+            <option value="High">150 - 300 (High)</option>
+            <option value="Crowded">&gt; 300 (Crowded)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sortSelect">Sort By:</label>
+          <select id="sortSelect">
+            <option value="least">Least Submissions (Best Opportunity)</option>
+            <option value="most">Most Submissions</option>
+            <option value="id_asc">PS ID (Ascending)</option>
+            <option value="id_desc">PS ID (Descending)</option>
+            <option value="title">Title (A-Z)</option>
+          </select>
+        </div>
+
+        <div class="filter-group filter-actions">
+          <button id="resetBtn" class="retro-btn">Reset</button>
+        </div>
+      </div>
+
+      <!-- Simple Info Strip -->
+      <div class="status-strip">
+        <span>Found: <strong id="resultCount">0</strong> problem statements</span>
+        <span class="sep">|</span>
+        <span>Total Nationwide Submissions: <strong id="totalSubmissionsCount">0</strong></span>
+        <span class="sep">|</span>
+        <span>Last synced: <span id="lastUpdatedText">--</span></span>
+        <span class="sep">|</span>
+        <span><a href="#" id="viewSavedLink">Show Saved Only (<span id="savedCount">0</span>)</a></span>
+      </div>
+    </div>
+
+    <!-- Retro Plain Table -->
+    <div class="table-container">
+      <table class="retro-table" id="psTable">
+        <thead>
+          <tr>
+            <th width="32">Fav</th>
+            <th width="90">PS ID</th>
+            <th>Problem Statement Title</th>
+            <th width="85">Type</th>
+            <th width="160">Theme</th>
+            <th width="180">Organization</th>
+            <th width="105" class="text-right">Submissions</th>
+            <th width="85" class="text-right">Slots Left</th>
+            <th width="70" class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td colspan="9" class="text-center" style="padding: 30px;">Loading database...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Simple Detail Box (Inline or Modal) -->
+    <div id="detailBox" class="detail-box" style="display:none;">
+      <div class="detail-box-header">
+        <span id="detailBoxTitle"><strong>SIH26001</strong> - Title</span>
+        <button id="closeDetailBox" class="retro-btn btn-sm">Close [X]</button>
+      </div>
+      <div class="detail-box-body">
+        <table class="meta-table">
+          <tr>
+            <td width="15%"><strong>Category:</strong></td>
+            <td width="35%" id="detailCategory">--</td>
+            <td width="15%"><strong>Submissions:</strong></td>
+            <td width="35%" id="detailSubmissions">--</td>
+          </tr>
+          <tr>
+            <td><strong>Theme:</strong></td>
+            <td id="detailTheme">--</td>
+            <td><strong>Slots Left:</strong></td>
+            <td id="detailSlots">--</td>
+          </tr>
+          <tr>
+            <td><strong>Organization:</strong></td>
+            <td id="detailOrg">--</td>
+            <td><strong>Deadline:</strong></td>
+            <td id="detailDeadline">--</td>
+          </tr>
+          <tr>
+            <td><strong>Department:</strong></td>
+            <td id="detailDept">--</td>
+            <td><strong>Official Link:</strong></td>
+            <td><a id="detailLink" href="https://sih.gov.in/sih2026PS" target="_blank">Open on sih.gov.in &raquo;</a></td>
+          </tr>
+        </table>
+        
+        <div class="detail-text-heading">Description &amp; Specifications:</div>
+        <div id="detailText" class="detail-text"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      SIH 2026 Live Submissions Directory &bull; Direct scraper of <a href="https://sih.gov.in/sih2026PS" target="_blank">sih.gov.in/sih2026PS</a>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
