@@ -2,11 +2,10 @@
   "framework": null,
   "buildCommand": "echo 'Static build complete'",
   "outputDirectory": "public",
-  "regions": ["bom1"],
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
+      "source": "/api/:path*",
+      "destination": "https://tracker-990492877632.asia-south1.run.app/api/:path*"
     }
   ]
 }
