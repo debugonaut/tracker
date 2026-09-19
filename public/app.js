@@ -9,7 +9,12 @@
   let showActiveOnly = false;
   let snapshotCounts = JSON.parse(localStorage.getItem('sih2026_snapshot_counts') || 'null');
   let currentPage = 1;
-  let itemsPerPage = 100;
+  let userSelectedPageSize = false;
+  let itemsPerPage = typeof window !== 'undefined' && (window.innerWidth <= 768 || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)) ? 10 : 50;
+
+  function isMobileViewport() {
+    return typeof window !== 'undefined' && (window.innerWidth <= 768 || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches));
+  }
 
   const MOON_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
   const SUN_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
@@ -67,9 +72,19 @@
 
   function init() {
     initTheme();
+    initPagination();
     updateSavedCount();
     setupListeners();
     fetchData();
+  }
+
+  function initPagination() {
+    if (!userSelectedPageSize) {
+      itemsPerPage = isMobileViewport() ? 10 : 50;
+      if (pageSizeSelect) {
+        pageSizeSelect.value = String(itemsPerPage);
+      }
+    }
   }
 
   function initTheme() {
@@ -133,11 +148,25 @@
     });
 
     pageSizeSelect.addEventListener('change', (e) => {
+      userSelectedPageSize = true;
       const val = e.target.value;
       itemsPerPage = val === 'all' ? 'all' : parseInt(val, 10);
       currentPage = 1;
       if (window.va) window.va('event', { name: 'Change_Page_Size', data: { size: val } });
       render();
+    });
+
+    // Auto-adapt when user switches to mobile view in DevTools or resizes window
+    window.addEventListener('resize', () => {
+      if (!userSelectedPageSize) {
+        const expected = isMobileViewport() ? 10 : 50;
+        if (itemsPerPage !== expected) {
+          itemsPerPage = expected;
+          if (pageSizeSelect) pageSizeSelect.value = String(itemsPerPage);
+          currentPage = 1;
+          render();
+        }
+      }
     });
 
     prevPageBtn.addEventListener('click', () => {
@@ -193,6 +222,23 @@
 
     closeDetailBox.addEventListener('click', () => {
       detailBox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    // Close detail modal when tapping outside content on mobile
+    detailBox.addEventListener('click', (e) => {
+      if (e.target === detailBox) {
+        detailBox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close detail modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && detailBox.style.display !== 'none') {
+        detailBox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
     });
   }
 
@@ -413,6 +459,10 @@
     let startIdx = 0;
     let endIdx = list.length;
 
+    if (!userSelectedPageSize && pageSizeSelect && pageSizeSelect.value !== String(itemsPerPage)) {
+      pageSizeSelect.value = String(itemsPerPage);
+    }
+
     if (itemsPerPage !== 'all') {
       totalPages = Math.ceil(list.length / itemsPerPage);
       if (currentPage > totalPages) currentPage = totalPages;
@@ -447,23 +497,23 @@
       const sNo = escapeHtml(p.sno || (startIdx + idx + 1));
 
       return `
-        <tr data-id="${p.id}">
-          <td class="text-center s-no-cell">${sNo}</td>
-          <td class="text-center">
-            <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${p.id}" title="Bookmark">&#9733;</button>
+        <tr data-id="${p.id}" class="ps-row">
+          <td class="text-center s-no-cell cell-sno" data-label="S.No.">${sNo}</td>
+          <td class="text-center cell-fav">
+            <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${p.id}" title="Bookmark" aria-label="Bookmark problem statement">&#9733;</button>
           </td>
-          <td><span class="ps-id-tag">${escapeHtml(p.ps_number || p.id)}</span></td>
-          <td>
+          <td class="cell-id" data-label="PS ID"><span class="ps-id-tag">${escapeHtml(p.ps_number || p.id)}</span></td>
+          <td class="cell-title">
             <span class="ps-title-link" data-id="${p.id}">${escapeHtml(p.title)}</span>
           </td>
-          <td>${typePill}</td>
-          <td>${escapeHtml(p.theme)}</td>
-          <td>${escapeHtml(p.organization)}</td>
-          <td class="text-right">
-            <span class="sub-count-text ${subClass}">${p.submitted_count}</span>${deltaBadge} <span style="color:#888;">/ ${p.max_capacity}</span>
+          <td class="cell-type" data-label="Category">${typePill}</td>
+          <td class="cell-theme" data-label="Theme">${escapeHtml(p.theme)}</td>
+          <td class="cell-org" data-label="Organization">${escapeHtml(p.organization)}</td>
+          <td class="text-right cell-submissions" data-label="Submissions">
+            <span class="sub-count-text ${subClass}">${p.submitted_count}</span>${deltaBadge} <span class="sub-capacity-text" style="color:#888;">/ ${p.max_capacity}</span>
           </td>
-          <td class="text-right sub-slots">${p.slots_left}</td>
-          <td class="text-center">
+          <td class="text-right sub-slots cell-slots" data-label="Slots Left">${p.slots_left}</td>
+          <td class="text-center cell-action">
             <button class="retro-btn btn-sm btn-view" data-id="${p.id}">View</button>
           </td>
         </tr>
@@ -512,7 +562,13 @@
     detailText.innerHTML = desc;
 
     detailBox.style.display = 'block';
-    detailBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (window.innerWidth <= 768) {
+      document.body.style.overflow = 'hidden';
+      const detailBody = detailBox.querySelector('.detail-box-body');
+      if (detailBody) detailBody.scrollTop = 0;
+    } else {
+      detailBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   function toggleBookmark(id) {
@@ -541,9 +597,10 @@
     sortSelect.value = 'most';
     showSavedOnly = false;
     showActiveOnly = false;
+    userSelectedPageSize = false;
     currentPage = 1;
-    itemsPerPage = 100;
-    pageSizeSelect.value = '100';
+    itemsPerPage = isMobileViewport() ? 10 : 50;
+    if (pageSizeSelect) pageSizeSelect.value = String(itemsPerPage);
     viewSavedLink.textContent = `Show Saved Only (${bookmarks.size})`;
     viewSavedLink.style.fontWeight = 'normal';
     if (viewActiveLink) {

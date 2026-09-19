@@ -33,10 +33,12 @@
         <span class="live-tag">LIVE</span>
       </div>
       <div class="top-nav-meta">
-        <span id="metaStats">Loading...</span>
-        <button id="themeToggleBtn" class="retro-btn btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle theme"></button>
-        <button id="refreshBtn" class="retro-btn btn-sm">Refresh Data</button>
-        <button id="exportBtn" class="retro-btn btn-sm">Export CSV</button>
+        <span id="metaStats" class="meta-stats-badge">Loading...</span>
+        <div class="top-nav-actions">
+          <button id="themeToggleBtn" class="retro-btn btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle theme"></button>
+          <button id="refreshBtn" class="retro-btn btn-sm">Refresh</button>
+          <button id="exportBtn" class="retro-btn btn-sm">Export CSV</button>
+        </div>
       </div>
     </div>
   </div>
@@ -104,15 +106,14 @@
 
       <!-- Simple Info Strip -->
       <div class="status-strip">
-        <span>Found: <strong id="resultCount">0</strong> problem statements</span>
+        <span class="status-chip">Found: <strong id="resultCount">0</strong></span>
         <span class="sep">|</span>
-        <span>Total Nationwide Submissions: <strong id="totalSubmissionsCount">0</strong></span>
+        <span class="status-chip">Nationwide Submissions: <strong id="totalSubmissionsCount">0</strong></span>
         <span class="sep">|</span>
-        <span>Last synced: <span id="lastUpdatedText">--</span></span>
+        <span class="status-chip">Synced: <span id="lastUpdatedText">--</span></span>
         <span class="sep">|</span>
-        <span><a href="#" id="viewSavedLink">Show Saved Only (<span id="savedCount">0</span>)</a></span>
-        <span id="activeStrip" style="display:none;">
-          <span class="sep">|</span>
+        <span class="status-chip"><a href="#" id="viewSavedLink">Show Saved Only (<span id="savedCount">0</span>)</a></span>
+        <span id="activeStrip" class="status-chip status-active-chip" style="display:none;">
           <a href="#" id="viewActiveLink" class="active-filter-link">🟢 New Submissions (<span id="activeCount">0</span>)</a>
           <button id="markSeenBtn" class="retro-btn btn-xs" title="Reset new submission indicators">Mark Seen</button>
         </span>
@@ -151,9 +152,11 @@
       </div>
       <div class="page-size">
         <label for="pageSizeSelect">Per page:</label>
-        <select id="pageSizeSelect">
+        <select id="pageSizeSelect" autocomplete="off">
+          <option value="10">10</option>
+          <option value="25">25</option>
           <option value="50">50</option>
-          <option value="100" selected>100</option>
+          <option value="100">100</option>
           <option value="500">500</option>
           <option value="all">All</option>
         </select>
@@ -167,40 +170,42 @@
 
     <!-- Simple Detail Box (Inline or Modal) -->
     <div id="detailBox" class="detail-box" style="display:none;">
-      <div class="detail-box-header">
-        <span id="detailBoxTitle"><strong>SIH26001</strong> - Title</span>
-        <button id="closeDetailBox" class="retro-btn btn-sm">Close [X]</button>
-      </div>
-      <div class="detail-box-body">
-        <table class="meta-table">
-          <tr>
-            <td width="15%"><strong>Category:</strong></td>
-            <td width="35%" id="detailCategory">--</td>
-            <td width="15%"><strong>Submissions:</strong></td>
-            <td width="35%" id="detailSubmissions">--</td>
-          </tr>
-          <tr>
-            <td><strong>Theme:</strong></td>
-            <td id="detailTheme">--</td>
-            <td><strong>Slots Left:</strong></td>
-            <td id="detailSlots">--</td>
-          </tr>
-          <tr>
-            <td><strong>Organization:</strong></td>
-            <td id="detailOrg">--</td>
-            <td><strong>Deadline:</strong></td>
-            <td id="detailDeadline">--</td>
-          </tr>
-          <tr>
-            <td><strong>Department:</strong></td>
-            <td id="detailDept">--</td>
-            <td><strong>Official Link:</strong></td>
-            <td><a id="detailLink" href="https://sih.gov.in/sih2026PS" target="_blank">Open on sih.gov.in &raquo;</a></td>
-          </tr>
-        </table>
-        
-        <div class="detail-text-heading">Description &amp; Specifications:</div>
-        <div id="detailText" class="detail-text"></div>
+      <div class="detail-box-inner">
+        <div class="detail-box-header">
+          <span id="detailBoxTitle"><strong>SIH26001</strong> - Title</span>
+          <button id="closeDetailBox" class="retro-btn btn-sm" aria-label="Close modal">Close [X]</button>
+        </div>
+        <div class="detail-box-body">
+          <table class="meta-table">
+            <tr>
+              <td width="15%"><strong>Category:</strong></td>
+              <td width="35%" id="detailCategory">--</td>
+              <td width="15%"><strong>Submissions:</strong></td>
+              <td width="35%" id="detailSubmissions">--</td>
+            </tr>
+            <tr>
+              <td><strong>Theme:</strong></td>
+              <td id="detailTheme">--</td>
+              <td><strong>Slots Left:</strong></td>
+              <td id="detailSlots">--</td>
+            </tr>
+            <tr>
+              <td><strong>Organization:</strong></td>
+              <td id="detailOrg">--</td>
+              <td><strong>Deadline:</strong></td>
+              <td id="detailDeadline">--</td>
+            </tr>
+            <tr>
+              <td><strong>Department:</strong></td>
+              <td id="detailDept">--</td>
+              <td><strong>Official Link:</strong></td>
+              <td><a id="detailLink" href="https://sih.gov.in/sih2026PS" target="_blank">Open on sih.gov.in &raquo;</a></td>
+            </tr>
+          </table>
+          
+          <div class="detail-text-heading">Description &amp; Specifications:</div>
+          <div id="detailText" class="detail-text"></div>
+        </div>
       </div>
     </div>
 
