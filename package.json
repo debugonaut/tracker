@@ -1,0 +1,9 @@
+{
+  "name": "sih2026-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SIH 2026 Live Submissions Tracker and Problem Statements Directory",
+  "scripts": {
+    "build": "echo 'Static build complete'"
+  }
+}
