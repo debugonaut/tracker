@@ -162,6 +162,16 @@ select {
   font-size: 11px;
 }
 
+.btn-xs {
+  padding: 1px 5px;
+  font-size: 10px;
+}
+
+.active-filter-link {
+  color: #007700 !important;
+  font-weight: bold;
+}
+
 /* Status Strip */
 .status-strip {
   margin-top: 8px;
@@ -285,6 +295,23 @@ select {
 
 .sub-high {
   color: #cc0000;
+}
+
+/* Green +1, +2 delta badge for added submissions */
+.sub-delta {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: #007700;
+  background-color: #eaf7ea;
+  border: 1px solid #a3dca3;
+  border-radius: 2px;
+  padding: 0 3px;
+  margin-left: 2px;
+  vertical-align: super;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .sub-slots {

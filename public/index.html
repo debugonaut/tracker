@@ -73,6 +73,7 @@
           <select id="sortSelect">
             <option value="most" selected>Most Submissions (Maximum First)</option>
             <option value="least">Least Submissions (Minimum First)</option>
+            <option value="active">🔥 Recently Active (+New Ideas)</option>
             <option value="id_asc">PS ID (Ascending)</option>
             <option value="id_desc">PS ID (Descending)</option>
             <option value="title">Title (A-Z)</option>
@@ -93,6 +94,11 @@
         <span>Last synced: <span id="lastUpdatedText">--</span></span>
         <span class="sep">|</span>
         <span><a href="#" id="viewSavedLink">Show Saved Only (<span id="savedCount">0</span>)</a></span>
+        <span id="activeStrip" style="display:none;">
+          <span class="sep">|</span>
+          <a href="#" id="viewActiveLink" class="active-filter-link">🟢 New Submissions (<span id="activeCount">0</span>)</a>
+          <button id="markSeenBtn" class="retro-btn btn-xs" title="Reset new submission indicators">Mark Seen</button>
+        </span>
       </div>
     </div>
 

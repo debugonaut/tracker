@@ -198,7 +198,32 @@ def scrape_sih_2026(save_to_disk=True, target_file=None):
     org_counts = {}
     comp_counts = {'Low': 0, 'Medium': 0, 'High': 0, 'Crowded': 0}
     
+    # Load previous submission counts for delta tracking
+    prev_counts = {}
+    read_source = target_file if (target_file and os.path.exists(target_file)) else (DATA_FILE if os.path.exists(DATA_FILE) else None)
+    if not read_source and os.path.exists('/tmp/sih2026_data.json'):
+        read_source = '/tmp/sih2026_data.json'
+    
+    if read_source:
+        try:
+            with open(read_source, 'r', encoding='utf-8') as f:
+                old_data = json.load(f)
+                for old_p in old_data.get('problem_statements', []):
+                    prev_counts[old_p['id']] = old_p.get('submitted_count', 0)
+        except Exception:
+            pass
+
+    new_submissions_in_sync = 0
+    active_ps_count = 0
     for p in problem_statements:
+        old_count = prev_counts.get(p['id'], p['submitted_count'])
+        delta = max(0, p['submitted_count'] - old_count)
+        p['delta_submissions'] = delta
+        p['previous_count'] = old_count
+        if delta > 0:
+            new_submissions_in_sync += delta
+            active_ps_count += 1
+
         t = p['theme'] or 'Uncategorized'
         theme_counts[t] = theme_counts.get(t, 0) + 1
         
@@ -219,6 +244,8 @@ def scrape_sih_2026(save_to_disk=True, target_file=None):
         'total_problem_statements': len(problem_statements),
         'total_submissions': total_submissions,
         'total_capacity': total_capacity,
+        'new_submissions_in_sync': new_submissions_in_sync,
+        'active_ps_count': active_ps_count,
         'software_count': software_count,
         'hardware_count': hardware_count,
         'competition_stats': comp_counts,

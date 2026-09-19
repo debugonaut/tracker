@@ -6,6 +6,8 @@
   let problemStatements = [];
   let bookmarks = new Set(JSON.parse(localStorage.getItem('sih2026_bookmarks') || '[]'));
   let showSavedOnly = false;
+  let showActiveOnly = false;
+  let snapshotCounts = JSON.parse(localStorage.getItem('sih2026_snapshot_counts') || 'null');
 
   // DOM Elements
   const metaStats = document.getElementById('metaStats');
@@ -25,6 +27,12 @@
   const lastUpdatedText = document.getElementById('lastUpdatedText');
   const viewSavedLink = document.getElementById('viewSavedLink');
   const savedCount = document.getElementById('savedCount');
+
+  // Active / Delta Tracking Elements
+  const activeStrip = document.getElementById('activeStrip');
+  const viewActiveLink = document.getElementById('viewActiveLink');
+  const activeCount = document.getElementById('activeCount');
+  const markSeenBtn = document.getElementById('markSeenBtn');
 
   const tableBody = document.getElementById('tableBody');
 
@@ -71,6 +79,23 @@
       render();
     });
 
+    if (viewActiveLink) {
+      viewActiveLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showActiveOnly = !showActiveOnly;
+        viewActiveLink.style.textDecoration = showActiveOnly ? 'none' : 'underline';
+        viewActiveLink.style.backgroundColor = showActiveOnly ? '#d4ecd4' : 'transparent';
+        render();
+      });
+    }
+
+    if (markSeenBtn) {
+      markSeenBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        markAllSeen();
+      });
+    }
+
     closeDetailBox.addEventListener('click', () => {
       detailBox.style.display = 'none';
     });
@@ -91,6 +116,7 @@
       totalSubmissionsCount.textContent = rawData.total_submissions.toLocaleString();
       lastUpdatedText.textContent = rawData.last_updated_human || 'Today';
 
+      calculateDeltas();
       populateDropdowns(problemStatements);
       render();
     } catch (err) {
@@ -112,8 +138,11 @@
         metaStats.textContent = `${rawData.total_problem_statements} Statements | ${rawData.total_submissions.toLocaleString()} Submissions`;
         totalSubmissionsCount.textContent = rawData.total_submissions.toLocaleString();
         lastUpdatedText.textContent = rawData.last_updated_human || 'Just now';
+        
+        calculateDeltas();
         populateDropdowns(problemStatements);
         render();
+
         if (data.status === 'notice') {
           alert(data.message);
         } else {
@@ -130,6 +159,66 @@
       refreshBtn.disabled = false;
       refreshBtn.textContent = 'Refresh Data';
     }
+  }
+
+  function calculateDeltas() {
+    let totalActive = 0;
+    let totalNewIdeas = 0;
+
+    const isFirstVisit = !snapshotCounts;
+    const currentCounts = {};
+
+    problemStatements.forEach(p => {
+      const current = p.submitted_count || 0;
+      currentCounts[p.id] = current;
+
+      if (isFirstVisit) {
+        // Fallback to sync-level delta from scraper if present
+        p.effective_delta = p.delta_submissions || 0;
+      } else {
+        const prev = snapshotCounts[p.id] !== undefined ? snapshotCounts[p.id] : current;
+        p.effective_delta = Math.max(0, current - prev);
+      }
+
+      if (p.effective_delta > 0) {
+        totalActive++;
+        totalNewIdeas += p.effective_delta;
+      }
+    });
+
+    if (isFirstVisit) {
+      snapshotCounts = currentCounts;
+      localStorage.setItem('sih2026_snapshot_counts', JSON.stringify(snapshotCounts));
+      localStorage.setItem('sih2026_snapshot_time', new Date().toISOString());
+    }
+
+    if (activeStrip) {
+      if (totalActive > 0) {
+        activeStrip.style.display = 'inline';
+        activeCount.textContent = `${totalActive} (+${totalNewIdeas})`;
+        viewActiveLink.title = `${totalNewIdeas} new idea submissions across ${totalActive} problem statements`;
+      } else {
+        activeStrip.style.display = 'none';
+      }
+    }
+  }
+
+  function markAllSeen() {
+    snapshotCounts = {};
+    problemStatements.forEach(p => {
+      snapshotCounts[p.id] = p.submitted_count || 0;
+      p.effective_delta = 0;
+    });
+    localStorage.setItem('sih2026_snapshot_counts', JSON.stringify(snapshotCounts));
+    localStorage.setItem('sih2026_snapshot_time', new Date().toISOString());
+
+    if (activeStrip) activeStrip.style.display = 'none';
+    showActiveOnly = false;
+    if (viewActiveLink) {
+      viewActiveLink.style.textDecoration = 'underline';
+      viewActiveLink.style.backgroundColor = 'transparent';
+    }
+    render();
   }
 
   function populateDropdowns(list) {
@@ -177,6 +266,7 @@
 
     let list = problemStatements.filter(p => {
       if (showSavedOnly && !bookmarks.has(p.id)) return false;
+      if (showActiveOnly && (!p.effective_delta || p.effective_delta <= 0)) return false;
       if (cat !== 'all' && p.category.toLowerCase() !== cat.toLowerCase()) return false;
       if (theme !== 'all' && p.theme !== theme) return false;
       if (org !== 'all' && p.organization !== org) return false;
@@ -195,6 +285,8 @@
 
     list.sort((a, b) => {
       switch (sort) {
+        case 'active':
+          return (b.effective_delta || 0) - (a.effective_delta || 0) || b.submitted_count - a.submitted_count;
         case 'least': return a.submitted_count - b.submitted_count;
         case 'most': return b.submitted_count - a.submitted_count;
         case 'id_asc': return (parseInt(a.id, 10) || 0) - (parseInt(b.id, 10) || 0);
@@ -225,6 +317,10 @@
       if (p.submitted_count > 150) subClass = 'sub-high';
       else if (p.submitted_count >= 50) subClass = 'sub-med';
 
+      const deltaBadge = p.effective_delta > 0 
+        ? `<span class="sub-delta" title="+${p.effective_delta} new idea${p.effective_delta > 1 ? 's' : ''} submitted since last check">+${p.effective_delta}</span>`
+        : '';
+
       return `
         <tr data-id="${p.id}">
           <td class="text-center">
@@ -238,7 +334,7 @@
           <td>${escapeHtml(p.theme)}</td>
           <td>${escapeHtml(p.organization)}</td>
           <td class="text-right">
-            <span class="sub-count-text ${subClass}">${p.submitted_count}</span> <span style="color:#888;">/ ${p.max_capacity}</span>
+            <span class="sub-count-text ${subClass}">${p.submitted_count}</span>${deltaBadge} <span style="color:#888;">/ ${p.max_capacity}</span>
           </td>
           <td class="text-right sub-slots">${p.slots_left}</td>
           <td class="text-center">
@@ -269,7 +365,12 @@
 
     detailBoxTitle.innerHTML = `<strong>${escapeHtml(p.ps_number || p.id)}</strong> - ${escapeHtml(p.title)}`;
     detailCategory.textContent = p.category;
-    detailSubmissions.innerHTML = `<strong>${p.submitted_count}</strong> / ${p.max_capacity} (${p.fill_percentage}% filled)`;
+
+    const deltaBadge = p.effective_delta > 0 
+      ? ` <span class="sub-delta" title="+${p.effective_delta} recent submissions">+${p.effective_delta} new</span>`
+      : '';
+
+    detailSubmissions.innerHTML = `<strong>${p.submitted_count}</strong>${deltaBadge} / ${p.max_capacity} (${p.fill_percentage}% filled)`;
     detailTheme.textContent = p.theme;
     detailSlots.innerHTML = `<strong style="color:#008800;">${p.slots_left}</strong> slots available`;
     detailOrg.textContent = p.organization;
@@ -310,8 +411,13 @@
     compSelect.value = 'all';
     sortSelect.value = 'most';
     showSavedOnly = false;
+    showActiveOnly = false;
     viewSavedLink.textContent = `Show Saved Only (${bookmarks.size})`;
     viewSavedLink.style.fontWeight = 'normal';
+    if (viewActiveLink) {
+      viewActiveLink.style.textDecoration = 'underline';
+      viewActiveLink.style.backgroundColor = 'transparent';
+    }
     render();
   }
 
