@@ -1,9 +1,15 @@
 name: Auto-Sync SIH Submissions
 
 on:
-  workflow_dispatch: # Allows manual one-click trigger from GitHub Actions tab
+  workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # Every 6 hours
+    - cron: '*/30 * * * *' # Automatically runs every 30 minutes
+  push:
+    paths:
+      - '.github/workflows/update.yml'
+
+permissions:
+  contents: write
 
 jobs:
   sync:
@@ -27,8 +33,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git config --global user.name "SIH Bot"
-          git config --global user.email "bot@sih-tracker.local"
+          git config --global user.name "SIH Auto Sync Bot"
+          git config --global user.email "bot@github-actions.local"
           git add data/sih2026_data.json public/data/sih2026_data.json
           if git diff --staged --quiet; then
             echo "No changes in submissions data."
