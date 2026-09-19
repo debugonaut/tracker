@@ -76,6 +76,15 @@ Now open your browser and navigate to:
 
 ---
 
+## ⏰ Automated Background Sync & Kill Switch
+
+The repository includes `sync.py` and `com.debugonaut.sihsync.plist` configured to sync live submission statistics to GitHub every 30 minutes.
+
+- **Automated Kill Switch**: Hardcoded to **1 October 2026 00:00:00 IST** (immediately following the SIH 2026 idea submission deadline on 30 September 2026).
+- **Self-Deactivation**: Once the deadline passes, the script automatically unloads `com.debugonaut.sihsync.plist` from macOS `launchd` and permanently halts all background processes, leaving zero residual background load.
+
+---
+
 ## 📤 Push to GitHub
 
 To push this repository to your GitHub account:
