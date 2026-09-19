@@ -198,15 +198,20 @@ select {
   background-color: #ffffff;
   border: 1px solid #bcc8d4;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .retro-table {
   width: 100%;
+  min-width: 840px;
   border-collapse: collapse;
   font-size: 11px;
 }
 
 .retro-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #4a637d;
   color: #ffffff;
   padding: 6px 8px;
@@ -407,10 +412,236 @@ select {
 
 /* Footer */
 .footer {
-  margin-top: 20px;
+  margin-top: 24px;
   text-align: center;
   font-size: 11px;
-  color: #777777;
+  color: #666666;
   border-top: 1px solid #ccd5de;
-  padding-top: 10px;
+  padding: 14px 10px;
+  line-height: 1.6;
 }
+
+.footer-credit {
+  font-size: 12px;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+.footer-credit a {
+  color: #0044bb;
+  font-weight: bold;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+  color: #cc0000;
+}
+
+.footer-sub {
+  font-size: 11px;
+  color: #777777;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for All Devices
+   ========================================================================== */
+
+/* Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .main-container {
+    max-width: 100%;
+    padding: 0 10px;
+    margin: 10px auto 30px auto;
+  }
+  
+  .filter-row {
+    gap: 8px 10px;
+  }
+  
+  .filter-search {
+    flex: 1 1 200px;
+  }
+}
+
+/* Medium Tablets & Large Phones (<= 768px) */
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 8px 12px;
+  }
+
+  .top-nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .site-title {
+    font-size: 14px;
+    justify-content: space-between;
+  }
+
+  .top-nav-meta {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filter-panel {
+    padding: 8px 10px;
+  }
+
+  .filter-row {
+    gap: 8px;
+  }
+
+  .filter-group {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: space-between;
+  }
+
+  .filter-search {
+    flex: 1 1 100%;
+  }
+
+  .filter-group select,
+  .filter-group input[type="text"] {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .status-strip {
+    font-size: 10.5px;
+    gap: 6px;
+  }
+
+  .detail-box {
+    margin-top: 10px;
+  }
+
+  .meta-table {
+    display: block;
+    width: 100%;
+  }
+
+  .meta-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .meta-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 4px 0;
+  }
+
+  .meta-table td {
+    border: none;
+    padding: 2px 4px;
+  }
+
+  .meta-table td:nth-child(1),
+  .meta-table td:nth-child(3) {
+    width: 30% !important;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .meta-table td:nth-child(2),
+  .meta-table td:nth-child(4) {
+    width: 70% !important;
+  }
+}
+
+/* Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 11.5px;
+  }
+
+  .main-container {
+    padding: 0 6px;
+    margin: 8px auto 20px auto;
+  }
+
+  .top-nav {
+    padding: 6px 8px;
+  }
+
+  .site-title {
+    font-size: 13px;
+  }
+
+  .top-nav-meta {
+    font-size: 10px;
+  }
+
+  .top-nav-meta .retro-btn {
+    padding: 4px 8px;
+    font-size: 10.5px;
+  }
+
+  .filter-group {
+    flex: 1 1 100%;
+  }
+
+  .filter-group label {
+    min-width: 70px;
+  }
+
+  .filter-actions {
+    justify-content: flex-end;
+  }
+
+  .filter-actions .retro-btn {
+    width: 100%;
+    padding: 6px;
+  }
+
+  .status-strip {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .status-strip .sep {
+    display: none;
+  }
+
+  .status-strip > span {
+    display: inline-block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+
+  .meta-table td:nth-child(1),
+  .meta-table td:nth-child(3) {
+    width: 100% !important;
+    padding-top: 4px;
+  }
+
+  .meta-table td:nth-child(2),
+  .meta-table td:nth-child(4) {
+    width: 100% !important;
+    padding-bottom: 4px;
+  }
+
+  .detail-box-header {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  .detail-text {
+    font-size: 11px;
+    max-height: 280px;
+    padding: 8px;
+  }
+
+  .footer {
+    font-size: 10.5px;
+    padding: 12px 6px;
+  }
+}
+
