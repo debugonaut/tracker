@@ -1,0 +1,38 @@
+name: Auto-Sync SIH Submissions
+
+on:
+  workflow_dispatch: # Allows manual one-click trigger from GitHub Actions tab
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Scraper
+        run: |
+          python3 scraper.py
+          cp data/sih2026_data.json public/data/sih2026_data.json
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "SIH Bot"
+          git config --global user.email "bot@sih-tracker.local"
+          git add data/sih2026_data.json public/data/sih2026_data.json
+          if git diff --staged --quiet; then
+            echo "No changes in submissions data."
+          else
+            git commit -m "Auto-sync: updated live submissions from sih.gov.in"
+            git push
+          fi
