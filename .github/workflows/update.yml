@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Test Connection to SIH
+        run: |
+          echo "=== Testing direct HTTP response from GitHub Actions runner ==="
+          curl -s -k -I -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" -H "Referer: https://sih.gov.in/" https://sih.gov.in/sih2026PS | head -n 10 || true
+
       - name: Run Scraper
         run: |
           python3 scraper.py
