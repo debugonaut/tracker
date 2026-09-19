@@ -292,6 +292,21 @@ select {
   font-size: 10px;
 }
 
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 5px;
+  min-width: 26px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.btn-icon svg {
+  display: block;
+  pointer-events: none;
+}
+
 .active-filter-link {
   color: var(--sub-low) !important;
   font-weight: bold;
