@@ -1,0 +1,11 @@
+.git
+.github
+node_modules
+__pycache__
+*.pyc
+*.log
+sync.log
+com.debugonaut.sihsync.plist
+.DS_Store
+.vscode
+.idea

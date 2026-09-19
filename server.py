@@ -7,10 +7,22 @@ import io
 import sys
 import threading
 from urllib.parse import urlparse, parse_qs
+from datetime import datetime
 from scraper import scrape_sih_2026, DATA_FILE, DATA_DIR
 
-PORT = int(os.environ.get('PORT', 5050))
+PORT = int(os.environ.get('PORT', 8080))
 PUBLIC_DIR = os.path.join(os.path.dirname(__file__), 'public')
+
+def get_data_filepath():
+    candidates = [
+        DATA_FILE,
+        os.path.join(PUBLIC_DIR, 'data', 'sih2026_data.json'),
+        '/tmp/sih2026_data.json'
+    ]
+    for c in candidates:
+        if os.path.exists(c) and os.path.getsize(c) > 0:
+            return c
+    return DATA_FILE
 
 is_refreshing = False
 refresh_lock = threading.Lock()
@@ -33,7 +45,7 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
     def do_HEAD(self):
         parsed = urlparse(self.path)
         path = parsed.path
-        if path in ('/api/data', '/api/refresh', '/api/stats', '/api/export'):
+        if path in ('/api/data', '/api/refresh', '/api/stats', '/api/export', '/healthz', '/api/health'):
             self.send_response(200)
             self.end_headers()
         else:
@@ -43,7 +55,9 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = parsed.path
 
-        if path == '/api/data':
+        if path in ('/healthz', '/api/health'):
+            self.send_json_response({'status': 'healthy', 'service': 'sih2026-tracker'})
+        elif path == '/api/data':
             self.handle_get_data()
         elif path == '/api/refresh':
             self.handle_refresh()
@@ -61,13 +75,14 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = parsed.path
 
-        if path == '/api/refresh':
+        if path in ('/api/refresh', '/refresh'):
             self.handle_refresh()
         else:
             self.send_error(404, "Endpoint not found")
 
     def handle_get_data(self):
-        if not os.path.exists(DATA_FILE):
+        target_file = get_data_filepath()
+        if not os.path.exists(target_file):
             try:
                 scrape_sih_2026()
             except Exception as e:
@@ -75,19 +90,20 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
                 return
 
         try:
-            with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            with open(target_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             self.send_json_response(data)
         except Exception as e:
             self.send_json_response({'error': f"Failed to read data: {e}"}, status=500)
 
     def handle_get_stats(self):
-        if not os.path.exists(DATA_FILE):
+        target_file = get_data_filepath()
+        if not os.path.exists(target_file):
             self.handle_get_data()
             return
             
         try:
-            with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            with open(target_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             stats = {
                 'last_updated': data.get('last_updated'),
@@ -130,12 +146,13 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
                 is_refreshing = False
 
     def handle_export_csv(self):
-        if not os.path.exists(DATA_FILE):
+        target_file = get_data_filepath()
+        if not os.path.exists(target_file):
             self.send_error(404, "Data not found. Please refresh first.")
             return
 
         try:
-            with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            with open(target_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
 
             ps_list = data.get('problem_statements', [])
@@ -189,16 +206,31 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+def background_periodic_sync():
+    import time
+    while True:
+        time.sleep(1800)
+        try:
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Periodic background sync running...")
+            scrape_sih_2026()
+        except Exception as e:
+            print(f"Periodic background sync error: {e}")
+
 def run_server():
     os.makedirs(PUBLIC_DIR, exist_ok=True)
     
     # Ensure initial scrape exists
-    if not os.path.exists(DATA_FILE):
+    target = get_data_filepath()
+    if not os.path.exists(target):
         print("Initial data file not found. Running initial scrape...")
         try:
             scrape_sih_2026()
         except Exception as e:
             print(f"Warning: Initial scrape failed: {e}")
+
+    # Start periodic sync thread
+    sync_thread = threading.Thread(target=background_periodic_sync, daemon=True)
+    sync_thread.start()
 
     class ThreadingTCPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
         daemon_threads = True
@@ -208,6 +240,7 @@ def run_server():
         print(f"\n========================================================")
         print(f"  SIH 2026 Live Tracker & Dashboard Server Running")
         print(f"  Local URL:   http://localhost:{PORT}")
+        print(f"  Health Check: http://localhost:{PORT}/healthz")
         print(f"  API Data:    http://localhost:{PORT}/api/data")
         print(f"  API Refresh: http://localhost:{PORT}/api/refresh")
         print(f"  API Export:  http://localhost:{PORT}/api/export")
