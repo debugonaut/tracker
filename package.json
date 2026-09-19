@@ -5,5 +5,8 @@
   "description": "SIH 2026 Live Submissions Tracker and Problem Statements Directory",
   "scripts": {
     "build": "echo 'Static build complete'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
