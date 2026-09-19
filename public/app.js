@@ -300,7 +300,7 @@
     themeSelect.value = 'all';
     orgSelect.value = 'all';
     compSelect.value = 'all';
-    sortSelect.value = 'least';
+    sortSelect.value = 'most';
     showSavedOnly = false;
     viewSavedLink.textContent = `Show Saved Only (${bookmarks.size})`;
     viewSavedLink.style.fontWeight = 'normal';
