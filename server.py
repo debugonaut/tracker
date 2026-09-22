@@ -10,7 +10,7 @@ from urllib.parse import urlparse, parse_qs
 from datetime import datetime
 from scraper import scrape_sih_2026, DATA_FILE, DATA_DIR
 
-PORT = int(os.environ.get('PORT', 8080))
+PORT = int(os.environ.get('PORT', 5050))
 PUBLIC_DIR = os.path.join(os.path.dirname(__file__), 'public')
 
 def get_data_filepath():
@@ -23,6 +23,17 @@ def get_data_filepath():
         if os.path.exists(c) and os.path.getsize(c) > 0:
             return c
     return DATA_FILE
+
+def get_history_filepath():
+    candidates = [
+        os.path.join(DATA_DIR, 'history.json'),
+        os.path.join(PUBLIC_DIR, 'data', 'history.json'),
+        '/tmp/history.json'
+    ]
+    for c in candidates:
+        if os.path.exists(c) and os.path.getsize(c) > 0:
+            return c
+    return os.path.join(DATA_DIR, 'history.json')
 
 is_refreshing = False
 refresh_lock = threading.Lock()
@@ -45,7 +56,7 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
     def do_HEAD(self):
         parsed = urlparse(self.path)
         path = parsed.path
-        if path in ('/api/data', '/api/refresh', '/api/stats', '/api/export', '/healthz', '/api/health'):
+        if path in ('/api/data', '/api/refresh', '/api/stats', '/api/export', '/api/history', '/healthz', '/api/health'):
             self.send_response(200)
             self.end_headers()
         else:
@@ -63,6 +74,8 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_refresh()
         elif path == '/api/stats':
             self.handle_get_stats()
+        elif path == '/api/history':
+            self.handle_get_history()
         elif path == '/api/export':
             self.handle_export_csv()
         elif path in ('', '/'):
@@ -145,6 +158,19 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
             with refresh_lock:
                 is_refreshing = False
 
+    def handle_get_history(self):
+        target_file = get_history_filepath()
+        if not os.path.exists(target_file):
+            self.send_json_response({'dates': [], 'daily_totals': {}, 'history': {}})
+            return
+
+        try:
+            with open(target_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            self.send_json_response(data)
+        except Exception as e:
+            self.send_json_response({'error': f"Failed to read history: {e}"}, status=500)
+
     def handle_export_csv(self):
         target_file = get_data_filepath()
         if not os.path.exists(target_file):
@@ -156,12 +182,27 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
                 data = json.load(f)
 
             ps_list = data.get('problem_statements', [])
+
+            # Compute strictly unique sequential ranks (duplicates ranked one below the other)
+            def sort_key(x):
+                sub = x.get('submitted_count', 0)
+                try:
+                    sno = int(x.get('sno') or 0)
+                except ValueError:
+                    sno = 9999
+                return (-sub, sno)
+
+            sorted_by_sub = sorted(ps_list, key=sort_key)
+            ranks = {}
+            for rank_idx, p_item in enumerate(sorted_by_sub, start=1):
+                ranks[p_item['id']] = rank_idx
+
             output = io.StringIO()
             writer = csv.writer(output)
             
             # Header - Only export table columns (no external Google Drive or video links)
             writer.writerow([
-                'S.No.', 'PS ID', 'Problem Statement Title', 'Category', 'Theme', 'Organization',
+                'S.No.', 'Rank', 'PS ID', 'Problem Statement Title', 'Category', 'Theme', 'Organization',
                 'Department', 'Submitted Ideas', 'Max Capacity', 'Slots Left',
                 'Fill %', 'Competition Level', 'Deadline'
             ])
@@ -171,8 +212,10 @@ class SIHTrackerHandler(http.server.SimpleHTTPRequestHandler):
                 org = str(p.get('organization', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 dept = str(p.get('department', '') or p.get('organization', '')).replace('\r', ' ').replace('\n', ' ').strip()
                 theme = str(p.get('theme', '')).replace('\r', ' ').replace('\n', ' ').strip()
+                rank_val = ranks.get(p.get('id'), idx)
                 writer.writerow([
                     p.get('sno') or idx,
+                    f"#{rank_val}",
                     p.get('ps_number') or p.get('id', ''),
                     title,
                     p.get('category', ''),

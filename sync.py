@@ -60,8 +60,13 @@ def sync_and_push():
     public_data = os.path.join(os.path.dirname(__file__), 'public', 'data', 'sih2026_data.json')
     shutil.copy(DATA_FILE, public_data)
 
+    hist_file = os.path.join(os.path.dirname(__file__), 'data', 'history.json')
+    public_hist = os.path.join(os.path.dirname(__file__), 'public', 'data', 'history.json')
+    if os.path.exists(hist_file):
+        shutil.copy(hist_file, public_hist)
+
     repo_dir = os.path.dirname(__file__)
-    subprocess.run(['git', 'add', 'data/sih2026_data.json', 'public/data/sih2026_data.json'], cwd=repo_dir, check=True)
+    subprocess.run(['git', 'add', 'data/sih2026_data.json', 'public/data/sih2026_data.json', 'data/history.json', 'public/data/history.json'], cwd=repo_dir, check=True)
 
     # Check if there are changes staged
     diff_res = subprocess.run(['git', 'diff', '--staged', '--quiet'], cwd=repo_dir)

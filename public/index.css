@@ -307,6 +307,133 @@ select {
   pointer-events: none;
 }
 
+/* Retro Multi-Select */
+.retro-multiselect {
+  position: relative;
+  display: inline-block;
+}
+
+.multiselect-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-width: 125px;
+  max-width: 200px;
+  padding: 2px 7px;
+  font-size: 11px;
+  cursor: pointer;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  border-radius: 2px;
+  text-align: left;
+}
+
+.multiselect-toggle span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-caret {
+  font-size: 9px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.retro-multiselect-panel {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  z-index: 1000;
+  min-width: 290px;
+  max-width: 350px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.multiselect-search-box input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 6px;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.multiselect-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--table-border);
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.multiselect-status {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.multiselect-checklist {
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.multiselect-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 5px;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.multiselect-item:hover {
+  background-color: var(--table-row-hover);
+}
+
+.multiselect-item input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.multiselect-item-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: var(--link);
+  font-size: 11px;
+  min-width: 52px;
+}
+
+.multiselect-item-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+  font-size: 11px;
+}
+
+.multiselect-item-count {
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 1px 4px;
+  background: var(--bg);
+  border: 1px solid var(--table-border);
+  border-radius: 2px;
+}
+
 .active-filter-link {
   color: var(--sub-low) !important;
   font-weight: bold;
@@ -389,6 +516,44 @@ select {
   font-size: 11px;
   color: var(--text-muted);
   font-weight: 600;
+}
+
+.cell-rank {
+  text-align: center;
+}
+
+.rank-badge {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.rank-top {
+  font-weight: 800;
+  border-color: var(--text-heading);
+  background-color: var(--table-head-bg);
+  color: var(--table-head-text);
+}
+
+.cell-day {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  text-align: right;
+}
+
+.cell-growth {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: var(--delta-text);
+  font-size: 11px;
+  text-align: right;
 }
 
 .ps-id-tag {
@@ -846,8 +1011,9 @@ select {
     width: 100%;
   }
 
-  /* Card Header: S.No + PS ID + Category + Bookmark Star */
+  /* Card Header: S.No + Rank + PS ID + Category + Bookmark Star */
   .retro-table td.cell-sno,
+  .retro-table td.cell-rank,
   .retro-table td.cell-id,
   .retro-table td.cell-type {
     display: inline-block;
@@ -862,6 +1028,10 @@ select {
     background: var(--strip-border) !important;
     padding: 2px 6px;
     border-radius: 2px;
+    margin-right: 6px;
+  }
+
+  .retro-table td.cell-rank {
     margin-right: 6px;
   }
 

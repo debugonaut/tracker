@@ -54,6 +54,37 @@
         </div>
 
         <div class="filter-group">
+          <label for="dateSelect">Date:</label>
+          <select id="dateSelect">
+            <option value="latest" selected>Latest (Live)</option>
+            <option value="all_dates">All Dates (Day-by-Day)</option>
+          </select>
+        </div>
+
+        <div class="filter-group filter-ps-select">
+          <label for="psMultiBtn">Select PS:</label>
+          <div class="retro-multiselect" id="psMultiContainer">
+            <button type="button" id="psMultiBtn" class="retro-btn multiselect-toggle">
+              <span id="psMultiLabel">All PS (240)</span>
+              <span class="dropdown-caret">&#9662;</span>
+            </button>
+            <div class="retro-multiselect-panel" id="psMultiPanel" style="display: none;">
+              <div class="multiselect-search-box">
+                <input type="text" id="psMultiSearch" placeholder="Filter PS ID / keyword..." autocomplete="off">
+              </div>
+              <div class="multiselect-toolbar">
+                <button type="button" id="psSelectAllBtn" class="retro-btn btn-xs">Select All</button>
+                <button type="button" id="psClearBtn" class="retro-btn btn-xs">Clear</button>
+                <span id="psSelectedCountText" class="multiselect-status">All selected</span>
+              </div>
+              <div class="multiselect-checklist" id="psMultiList">
+                <!-- Checkboxes populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
           <label for="catSelect">Category:</label>
           <select id="catSelect">
             <option value="all">All Categories</option>
@@ -113,6 +144,8 @@
         <span class="status-chip">Synced: <span id="lastUpdatedText">--</span></span>
         <span class="sep">|</span>
         <span class="status-chip"><a href="#" id="viewSavedLink">Show Saved Only (<span id="savedCount">0</span>)</a></span>
+        <span id="dateFilterChip" class="status-chip" style="display:none; color:#0055aa; font-weight:bold;"></span>
+        <span id="psFilterChip" class="status-chip" style="display:none; color:#994400; font-weight:bold;"></span>
         <span id="activeStrip" class="status-chip status-active-chip" style="display:none;">
           <a href="#" id="viewActiveLink" class="active-filter-link">🟢 New Submissions (<span id="activeCount">0</span>)</a>
           <button id="markSeenBtn" class="retro-btn btn-xs" title="Reset new submission indicators">Mark Seen</button>
@@ -123,23 +156,24 @@
     <!-- Retro Plain Table -->
     <div class="table-container">
       <table class="retro-table" id="psTable">
-        <thead>
-          <tr>
-            <th width="48" class="text-center">S.No.</th>
+        <thead id="tableHead">
+          <tr id="tableHeadRow">
+            <th width="44" class="text-center">S.No.</th>
+            <th width="54" class="text-center" id="thRank" title="Nationwide Leaderboard Rank">Rank</th>
             <th width="32" class="text-center">Fav</th>
-            <th width="90">PS ID</th>
+            <th width="85">PS ID</th>
             <th>Problem Statement Title</th>
             <th width="85">Type</th>
-            <th width="160">Theme</th>
-            <th width="180">Organization</th>
-            <th width="105" class="text-right">Submissions</th>
-            <th width="85" class="text-right">Slots Left</th>
-            <th width="70" class="text-center">Action</th>
+            <th width="150">Theme</th>
+            <th width="170">Organization</th>
+            <th width="115" class="text-right" id="thSubmissions">Submissions</th>
+            <th width="80" class="text-right" id="thSlots">Slots Left</th>
+            <th width="65" class="text-center">Action</th>
           </tr>
         </thead>
         <tbody id="tableBody">
           <tr>
-            <td colspan="10" class="text-center" style="padding: 30px;">Loading database...</td>
+            <td colspan="11" class="text-center" style="padding: 30px;">Loading database...</td>
           </tr>
         </tbody>
       </table>
@@ -178,28 +212,32 @@
         <div class="detail-box-body">
           <table class="meta-table">
             <tr>
-              <td width="15%"><strong>Category:</strong></td>
-              <td width="35%" id="detailCategory">--</td>
+              <td width="15%"><strong>Rank:</strong></td>
+              <td width="35%" id="detailRank">--</td>
               <td width="15%"><strong>Submissions:</strong></td>
               <td width="35%" id="detailSubmissions">--</td>
             </tr>
             <tr>
-              <td><strong>Theme:</strong></td>
-              <td id="detailTheme">--</td>
+              <td><strong>Category:</strong></td>
+              <td id="detailCategory">--</td>
               <td><strong>Slots Left:</strong></td>
               <td id="detailSlots">--</td>
             </tr>
             <tr>
-              <td><strong>Organization:</strong></td>
-              <td id="detailOrg">--</td>
+              <td><strong>Theme:</strong></td>
+              <td id="detailTheme">--</td>
               <td><strong>Deadline:</strong></td>
               <td id="detailDeadline">--</td>
             </tr>
             <tr>
-              <td><strong>Department:</strong></td>
-              <td id="detailDept">--</td>
+              <td><strong>Organization:</strong></td>
+              <td id="detailOrg">--</td>
               <td><strong>Official Link:</strong></td>
               <td><a id="detailLink" href="https://sih.gov.in/sih2026PS" target="_blank">Open on sih.gov.in &raquo;</a></td>
+            </tr>
+            <tr>
+              <td><strong>Department:</strong></td>
+              <td id="detailDept" colspan="3">--</td>
             </tr>
           </table>
           

@@ -10,7 +10,54 @@ IST = timezone(timedelta(hours=5, minutes=30))
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 DATA_FILE = os.path.join(DATA_DIR, 'sih2026_data.json')
+HISTORY_FILE = os.path.join(DATA_DIR, 'history.json')
 SIH_URL = 'https://sih.gov.in/sih2026PS'
+
+def update_history_file(problem_statements, total_submissions, target_dir=None):
+    """Updates the daily submission history record in data/history.json and public/data/history.json."""
+    base_dir = target_dir if target_dir else DATA_DIR
+    hist_file = os.path.join(base_dir, 'history.json')
+    today_str = datetime.now(IST).strftime('%Y-%m-%d')
+    history_data = {'dates': [], 'daily_totals': {}, 'history': {}}
+    if os.path.exists(hist_file):
+        try:
+            with open(hist_file, 'r', encoding='utf-8') as f:
+                history_data = json.load(f)
+        except Exception:
+            pass
+
+    if 'dates' not in history_data:
+        history_data['dates'] = []
+    if today_str not in history_data['dates']:
+        history_data['dates'].append(today_str)
+        history_data['dates'].sort()
+
+    if 'daily_totals' not in history_data:
+        history_data['daily_totals'] = {}
+    history_data['daily_totals'][today_str] = total_submissions
+
+    if 'history' not in history_data:
+        history_data['history'] = {}
+
+    for p in problem_statements:
+        pid = p['id']
+        if pid not in history_data['history']:
+            history_data['history'][pid] = {}
+        history_data['history'][pid][today_str] = p.get('submitted_count', 0)
+
+    try:
+        os.makedirs(os.path.dirname(hist_file), exist_ok=True)
+        with open(hist_file, 'w', encoding='utf-8') as f:
+            json.dump(history_data, f, indent=2, ensure_ascii=False)
+        pub_hist = os.path.join(os.path.dirname(__file__), 'public', 'data', 'history.json')
+        try:
+            os.makedirs(os.path.dirname(pub_hist), exist_ok=True)
+            with open(pub_hist, 'w', encoding='utf-8') as f_pub:
+                json.dump(history_data, f_pub, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+    except Exception as e:
+        print(f"Notice: Failed to update history file: {e}")
 
 def get_ssl_context():
     ctx = ssl.create_default_context()
@@ -266,6 +313,7 @@ def scrape_sih_2026(save_to_disk=True, target_file=None):
             with open(dest_path, 'w', encoding='utf-8') as f:
                 json.dump(payload, f, indent=2, ensure_ascii=False)
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Saved {len(problem_statements)} problem statements to {dest_path}")
+            update_history_file(problem_statements, total_submissions, os.path.dirname(dest_path))
         except OSError as e:
             print(f"Notice: Cannot save to {dest_path} ({e}). Trying /tmp/sih2026_data.json...")
             try:
