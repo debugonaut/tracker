@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-09-24T04:58:16.874550+05:30",
-  "last_updated_human": "24 September 2026, 04:58:16 AM IST",
+  "last_updated": "2026-09-24T05:28:20.276230+05:30",
+  "last_updated_human": "24 September 2026, 05:28:20 AM IST",
   "total_problem_statements": 240,
-  "total_submissions": 17118,
+  "total_submissions": 17123,
   "total_capacity": 120000,
-  "new_submissions_in_sync": 12,
-  "active_ps_count": 5,
+  "new_submissions_in_sync": 5,
+  "active_ps_count": 3,
   "software_count": 182,
   "hardware_count": 58,
   "competition_stats": {
@@ -86,7 +86,7 @@
     {
       "id": "26034",
       "title": "Software System to check compliance of Packaged Commodities under Legal Metrology(Packaged Commodities) Rules, 2011 by scanning products, images and labels.",
-      "count": 492,
+      "count": 495,
       "theme": "Miscellaneous"
     },
     {
@@ -582,8 +582,8 @@
       "dataset_link": "Additional Information regarding PS\nhttps://drive.google.com/drive/folders/1ibmzWpl_nK7aBhQurs22R9kqh9fPAQwC",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 97
+      "delta_submissions": 0,
+      "previous_count": 98
     },
     {
       "sno": "19",
@@ -932,8 +932,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 363
+      "delta_submissions": 0,
+      "previous_count": 364
     },
     {
       "sno": "33",
@@ -969,11 +969,11 @@
       "department": "Department of Consumer Affairs (DoCA)",
       "category": "Software",
       "theme": "Miscellaneous",
-      "submitted_count": 492,
+      "submitted_count": 495,
       "max_capacity": 500,
-      "submitted_ideas_str": "492/500",
-      "fill_percentage": 98.4,
-      "slots_left": 8,
+      "submitted_ideas_str": "495/500",
+      "fill_percentage": 99.0,
+      "slots_left": 5,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -982,8 +982,8 @@
       "dataset_link": "https://consumeraffairs.gov.in/pages/legal-metrology-act and the Legal Metrology (Packaged\ncommodities) Rules, 2011",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 8,
-      "previous_count": 484
+      "delta_submissions": 3,
+      "previous_count": 492
     },
     {
       "sno": "35",
@@ -1232,8 +1232,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 322
+      "delta_submissions": 0,
+      "previous_count": 323
     },
     {
       "sno": "45",
@@ -1257,8 +1257,8 @@
       "dataset_link": "The corpus can be assembled from open, authoritative public sources; representative examples:\n•Traditional Knowledge Digital Library (TKDL) — tkdl.res.in\n•Statutes & rules — India Code, indiacode.nic.in\n•IP India public databases (patents/InPASS, trade marks, designs, GI Registry) — ipindia.gov.in\n•National Biodiversity Authority / ABS — nbaindia.or",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 60
+      "delta_submissions": 0,
+      "previous_count": 61
     },
     {
       "sno": "46",
@@ -2344,11 +2344,11 @@
       "department": "National Council for Cooperative Training (NCCT)",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 198,
+      "submitted_count": 199,
       "max_capacity": 500,
-      "submitted_ideas_str": "198/500",
-      "fill_percentage": 39.6,
-      "slots_left": 302,
+      "submitted_ideas_str": "199/500",
+      "fill_percentage": 39.8,
+      "slots_left": 301,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -2357,7 +2357,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 198
     },
     {
@@ -2544,11 +2544,11 @@
       "department": "Department of Social Justice and Empowerment",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 17,
+      "submitted_count": 18,
       "max_capacity": 500,
-      "submitted_ideas_str": "17/500",
-      "fill_percentage": 3.4,
-      "slots_left": 483,
+      "submitted_ideas_str": "18/500",
+      "fill_percentage": 3.6,
+      "slots_left": 482,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -2557,7 +2557,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 17
     },
     {
