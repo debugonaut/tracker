@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-09-23T06:54:44.909664+05:30",
-  "last_updated_human": "23 September 2026, 06:54:44 AM IST",
+  "last_updated": "2026-09-23T07:24:48.058613+05:30",
+  "last_updated_human": "23 September 2026, 07:24:48 AM IST",
   "total_problem_statements": 240,
-  "total_submissions": 14188,
+  "total_submissions": 14190,
   "total_capacity": 120000,
   "new_submissions_in_sync": 0,
   "active_ps_count": 0,
@@ -4294,11 +4294,11 @@
       "department": "Department of Space / Indian Space Research Organisation",
       "category": "Software",
       "theme": "Space Technology",
-      "submitted_count": 128,
+      "submitted_count": 129,
       "max_capacity": 500,
-      "submitted_ideas_str": "128/500",
-      "fill_percentage": 25.6,
-      "slots_left": 372,
+      "submitted_ideas_str": "129/500",
+      "fill_percentage": 25.8,
+      "slots_left": 371,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -4308,7 +4308,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 0,
-      "previous_count": 128
+      "previous_count": 129
     },
     {
       "sno": "168",
@@ -5094,11 +5094,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Miscellaneous",
-      "submitted_count": 82,
+      "submitted_count": 83,
       "max_capacity": 500,
-      "submitted_ideas_str": "82/500",
-      "fill_percentage": 16.4,
-      "slots_left": 418,
+      "submitted_ideas_str": "83/500",
+      "fill_percentage": 16.6,
+      "slots_left": 417,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -5108,7 +5108,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 0,
-      "previous_count": 82
+      "previous_count": 83
     },
     {
       "sno": "200",
