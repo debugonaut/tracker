@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-09-25T03:56:57.667034+05:30",
-  "last_updated_human": "25 September 2026, 03:56:57 AM IST",
+  "last_updated": "2026-09-25T04:27:00.903244+05:30",
+  "last_updated_human": "25 September 2026, 04:27:00 AM IST",
   "total_problem_statements": 240,
-  "total_submissions": 20686,
+  "total_submissions": 20696,
   "total_capacity": 120000,
-  "new_submissions_in_sync": 12,
-  "active_ps_count": 7,
+  "new_submissions_in_sync": 10,
+  "active_ps_count": 5,
   "software_count": 182,
   "hardware_count": 58,
   "competition_stats": {
@@ -194,11 +194,11 @@
       "department": "Ministry of Development of North Eastern Region (MDoNER)",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 452,
+      "submitted_count": 457,
       "max_capacity": 500,
-      "submitted_ideas_str": "452/500",
-      "fill_percentage": 90.4,
-      "slots_left": 48,
+      "submitted_ideas_str": "457/500",
+      "fill_percentage": 91.4,
+      "slots_left": 43,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -207,8 +207,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 4,
-      "previous_count": 448
+      "delta_submissions": 5,
+      "previous_count": 452
     },
     {
       "sno": "4",
@@ -1069,11 +1069,11 @@
       "department": "MathWorks",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 217,
+      "submitted_count": 218,
       "max_capacity": 500,
-      "submitted_ideas_str": "217/500",
-      "fill_percentage": 43.4,
-      "slots_left": 283,
+      "submitted_ideas_str": "218/500",
+      "fill_percentage": 43.6,
+      "slots_left": 282,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -1082,7 +1082,7 @@
       "dataset_link": "APTOS 2019 Blindness Detection: https://www.kaggle.com/c/aptos2019-\nblindness-detection\nIDRiD (Indian Diabetic Retinopathy Image Dataset): https://ieeedataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid\nDRIVE (Vessel Extraction): https://drive.grand-challenge.org/\nMessidor-2: https://www.adcis.net/en/third-party/messidor2/",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 217
     },
     {
@@ -1219,11 +1219,11 @@
       "department": "All India Institute of Ayurveda",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 448,
+      "submitted_count": 450,
       "max_capacity": 500,
-      "submitted_ideas_str": "448/500",
-      "fill_percentage": 89.6,
-      "slots_left": 52,
+      "submitted_ideas_str": "450/500",
+      "fill_percentage": 90.0,
+      "slots_left": 50,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -1232,8 +1232,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 3,
-      "previous_count": 445
+      "delta_submissions": 2,
+      "previous_count": 448
     },
     {
       "sno": "45",
@@ -1507,8 +1507,8 @@
       "dataset_link": "JC Wise, Radar emitter Database, 2024\nhuggingface.co/datasets/alan-turing institute/turing-synthetic radar dataset",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 31
+      "delta_submissions": 0,
+      "previous_count": 32
     },
     {
       "sno": "56",
@@ -2407,8 +2407,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 128
+      "delta_submissions": 0,
+      "previous_count": 129
     },
     {
       "sno": "92",
@@ -2769,11 +2769,11 @@
       "department": "Cyber Security Cell",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 226,
+      "submitted_count": 227,
       "max_capacity": 500,
-      "submitted_ideas_str": "226/500",
-      "fill_percentage": 45.2,
-      "slots_left": 274,
+      "submitted_ideas_str": "227/500",
+      "fill_percentage": 45.4,
+      "slots_left": 273,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -2782,7 +2782,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 226
     },
     {
@@ -3444,11 +3444,11 @@
       "department": "Maharashtra State Innovation Society, Department of Skills, Employment, Entrepreneurship and Innovation",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 314,
+      "submitted_count": 315,
       "max_capacity": 500,
-      "submitted_ideas_str": "314/500",
-      "fill_percentage": 62.8,
-      "slots_left": 186,
+      "submitted_ideas_str": "315/500",
+      "fill_percentage": 63.0,
+      "slots_left": 185,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -3457,7 +3457,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 314
     },
     {
@@ -3482,8 +3482,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 92
+      "delta_submissions": 0,
+      "previous_count": 93
     },
     {
       "sno": "135",
@@ -3507,8 +3507,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 63
+      "delta_submissions": 0,
+      "previous_count": 64
     },
     {
       "sno": "136",
@@ -5357,8 +5357,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 52
+      "delta_submissions": 0,
+      "previous_count": 53
     },
     {
       "sno": "210",
