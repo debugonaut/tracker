@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-09-26T05:01:46.549378+05:30",
-  "last_updated_human": "26 September 2026, 05:01:46 AM IST",
+  "last_updated": "2026-09-26T05:31:49.855287+05:30",
+  "last_updated_human": "26 September 2026, 05:31:49 AM IST",
   "total_problem_statements": 240,
-  "total_submissions": 24904,
+  "total_submissions": 24912,
   "total_capacity": 120000,
-  "new_submissions_in_sync": 10,
-  "active_ps_count": 6,
+  "new_submissions_in_sync": 8,
+  "active_ps_count": 7,
   "software_count": 182,
   "hardware_count": 58,
   "competition_stats": {
-    "Low": 100,
-    "Medium": 92,
+    "Low": 99,
+    "Medium": 93,
     "High": 33,
     "Crowded": 15
   },
@@ -757,8 +757,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 125
+      "delta_submissions": 0,
+      "previous_count": 126
     },
     {
       "sno": "26",
@@ -1082,8 +1082,8 @@
       "dataset_link": "APTOS 2019 Blindness Detection: https://www.kaggle.com/c/aptos2019-\nblindness-detection\nIDRiD (Indian Diabetic Retinopathy Image Dataset): https://ieeedataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid\nDRIVE (Vessel Extraction): https://drive.grand-challenge.org/\nMessidor-2: https://www.adcis.net/en/third-party/messidor2/",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 269
+      "delta_submissions": 0,
+      "previous_count": 270
     },
     {
       "sno": "39",
@@ -1207,8 +1207,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 282
+      "delta_submissions": 0,
+      "previous_count": 283
     },
     {
       "sno": "44",
@@ -2032,8 +2032,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 74
+      "delta_submissions": 0,
+      "previous_count": 75
     },
     {
       "sno": "77",
@@ -3319,11 +3319,11 @@
       "department": "Maharashtra State Innovation Society, Department of Skills, Employment, Entrepreneurship and Innovation",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 72,
+      "submitted_count": 73,
       "max_capacity": 500,
-      "submitted_ideas_str": "72/500",
-      "fill_percentage": 14.4,
-      "slots_left": 428,
+      "submitted_ideas_str": "73/500",
+      "fill_percentage": 14.6,
+      "slots_left": 427,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -3332,7 +3332,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 72
     },
     {
@@ -3394,11 +3394,11 @@
       "department": "Maharashtra State Innovation Society, Department of Skills, Employment, Entrepreneurship and Innovation",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 407,
+      "submitted_count": 409,
       "max_capacity": 500,
-      "submitted_ideas_str": "407/500",
-      "fill_percentage": 81.4,
-      "slots_left": 93,
+      "submitted_ideas_str": "409/500",
+      "fill_percentage": 81.8,
+      "slots_left": 91,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -3407,7 +3407,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 407
     },
     {
@@ -3444,11 +3444,11 @@
       "department": "Maharashtra State Innovation Society, Department of Skills, Employment, Entrepreneurship and Innovation",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 467,
+      "submitted_count": 468,
       "max_capacity": 500,
-      "submitted_ideas_str": "467/500",
-      "fill_percentage": 93.4,
-      "slots_left": 33,
+      "submitted_ideas_str": "468/500",
+      "fill_percentage": 93.6,
+      "slots_left": 32,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -3457,8 +3457,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 5,
-      "previous_count": 462
+      "delta_submissions": 1,
+      "previous_count": 467
     },
     {
       "sno": "134",
@@ -4232,8 +4232,8 @@
       "dataset_link": "Standard Open source datasets for source code repositories (eg:Github), libraries (eg: Openssl) may be used.",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 38
+      "delta_submissions": 0,
+      "previous_count": 39
     },
     {
       "sno": "165",
@@ -4494,20 +4494,20 @@
       "department": "Department of Space / Indian Space Research Organisation",
       "category": "Software",
       "theme": "Disaster Management",
-      "submitted_count": 49,
+      "submitted_count": 50,
       "max_capacity": 500,
-      "submitted_ideas_str": "49/500",
-      "fill_percentage": 9.8,
-      "slots_left": 451,
-      "competition": "Low",
-      "competition_desc": "High Chance / Golden Opportunity",
+      "submitted_ideas_str": "50/500",
+      "fill_percentage": 10.0,
+      "slots_left": 450,
+      "competition": "Medium",
+      "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
       "description": "Background Accurate Digital Elevation Models (DEMs) and Digital Surface Models (DSMs) are fundamental to urban planning, disaster management, and military reconnaissance. Traditionally, elevation data is acquired through stereo-imaging pairs, LiDAR, or Interferometric Synthetic Aperture Radar (InSAR). These approaches can be cost-prohibitive, dependent on specific sensor availability, and computationally intensive. Single-view height estimation offers an agile alternative, but foundational monocular depth models are trained largely on natural egocentric imagery and predict relative depth. When applied to remote sensing, they face domain gaps, structural variations, and a lack of absolute-scale mapping. Converting relative depth into metric elevation remains a critical challenge, alongside the operational need to transform static elevation profiles into interactive 3D assets that can be navigated in real time. Description Develop an end-to-end software pipeline that transforms single-view optical RGB remote-sensing images into high-precision elevation maps. The framework must support both non-georeferenced and georeferenced imagery. • Non-Georeferenced RGB Imagery (for example, PNG or JPG): Produce a Relative Digital Surface Model (rDSM) for images without spatial metadata. • Georeferenced RGB Imagery (for example, GeoTIFF): Produce an Absolute Digital Surface Model (DSM) with metric height values for images containing coordinate-system metadata. The solution should use a pre-trained monocular depth-estimation backbone to generate initial relative-depth maps. For georeferenced imagery, a lower-resolution DEM source such as SRTM or a limited set of Ground Control Points may be used to map scale-agnostic depth features to absolute metric elevations. For non-georeferenced imagery, relative height may be used directly in the visualization stage. After computing the elevation map, the system should project the original optical image onto a generated 3D terrain mesh and integrate the result with a rendering engine such as Unity, Three.js, or Babylon.js. The interface should support seamless first-person navigation and analysis of structural heights and slopes from arbitrary aerial perspectives. Key Milestones • Elevation Extraction: Use a robust pre-trained monocular depth model to extract geometric and structural representations from single-view optical imagery. • Scale Calibration: Develop a module that converts relative depth to absolute height using scene-level statistics, low-resolution DEMs, semantic priors, or minimal Ground Control Points for georeferenced inputs. • Visualization Layer: Build an immersive, preferably interactive, rendering pipeline that converts the optical texture and derived depth map into a navigable 3D environment deployable as a standalone application. Evaluation Criteria: • DSM Estimation - Accuracy and Validation (50%): Evaluate RMSE, MAE, and correlation against LiDAR or reference data, including performance stability across urban, sparse, hilly, and forested landscapes. • Visualization - Rendering Quality and User Experience (50%): Assess projection accuracy, visual fidelity, navigability of the 3D flythrough, interface intuitiveness, software stability, and successful standalone deployment. Expected Solution Deliver a fully integrated software suite with complete source code and technical documentation. The solution must be deployable as a unified module containing the following components: • Elevation Estimation Module: Accept single-view optical satellite imagery in PNG, JPG, or TIFF format and output a high-fidelity DSM in a standard geospatial format. • Interactive Visualization Platform: Provide a user-friendly 3D flythrough experience that lets users upload imagery, visualize reconstructed terrain, and validate estimated height values against reference datasets. Hemant Kumar Lalwani: hemant.lalwani@sac.isro.gov.in Ashutosh Gupta: ashutoshg@sac.isro.gov.in Jugal Patel: jugal.patel@sac.isro.gov.in",
       "youtube_link": "",
       "dataset_link": "Any high-resolution remote-sensing dataset openly available on the internet may be used for development. Reference dataset: https://github.com/IMG-PROCESS-SAC/SIH2026/. A lower-resolution DEM source such as SRTM 30 m may be used to map scale-agnostic depth features to absolute metric elevations. During final evaluation, ISRO RGB-band optical satellite i",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 49
     },
     {
@@ -4619,11 +4619,11 @@
       "department": "Qualcomm Inc",
       "category": "Hardware",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 182,
+      "submitted_count": 183,
       "max_capacity": 500,
-      "submitted_ideas_str": "182/500",
-      "fill_percentage": 36.4,
-      "slots_left": 318,
+      "submitted_ideas_str": "183/500",
+      "fill_percentage": 36.6,
+      "slots_left": 317,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -4632,7 +4632,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 182
     },
     {
@@ -5294,11 +5294,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Smart Education",
-      "submitted_count": 345,
+      "submitted_count": 346,
       "max_capacity": 500,
-      "submitted_ideas_str": "345/500",
-      "fill_percentage": 69.0,
-      "slots_left": 155,
+      "submitted_ideas_str": "346/500",
+      "fill_percentage": 69.2,
+      "slots_left": 154,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -5307,7 +5307,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 345
     },
     {
@@ -5494,11 +5494,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Hardware",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 207,
+      "submitted_count": 208,
       "max_capacity": 500,
-      "submitted_ideas_str": "207/500",
-      "fill_percentage": 41.4,
-      "slots_left": 293,
+      "submitted_ideas_str": "208/500",
+      "fill_percentage": 41.6,
+      "slots_left": 292,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -5507,7 +5507,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 207
     },
     {
