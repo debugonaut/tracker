@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-26T10:02:21.168309+05:30",
-  "last_updated_human": "26 September 2026, 10:02:21 AM IST",
+  "last_updated": "2026-09-26T10:32:24.580618+05:30",
+  "last_updated_human": "26 September 2026, 10:32:24 AM IST",
   "total_problem_statements": 240,
-  "total_submissions": 25171,
+  "total_submissions": 25252,
   "total_capacity": 120000,
-  "new_submissions_in_sync": 76,
-  "active_ps_count": 50,
+  "new_submissions_in_sync": 81,
+  "active_ps_count": 61,
   "software_count": 182,
   "hardware_count": 58,
   "competition_stats": {
     "Low": 96,
-    "Medium": 96,
-    "High": 32,
-    "Crowded": 16
+    "Medium": 94,
+    "High": 33,
+    "Crowded": 17
   },
   "themes_distribution": {
     "Smart Automation": 56,
@@ -182,8 +182,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 260
+      "delta_submissions": 0,
+      "previous_count": 262
     },
     {
       "sno": "3",
@@ -232,8 +232,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 72
+      "delta_submissions": 0,
+      "previous_count": 73
     },
     {
       "sno": "5",
@@ -244,11 +244,11 @@
       "department": "Ministry of Development of North Eastern Region (MDoNER)",
       "category": "Hardware",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 260,
+      "submitted_count": 261,
       "max_capacity": 500,
-      "submitted_ideas_str": "260/500",
-      "fill_percentage": 52.0,
-      "slots_left": 240,
+      "submitted_ideas_str": "261/500",
+      "fill_percentage": 52.2,
+      "slots_left": 239,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -257,8 +257,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 3,
-      "previous_count": 257
+      "delta_submissions": 1,
+      "previous_count": 260
     },
     {
       "sno": "6",
@@ -282,8 +282,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 100
+      "delta_submissions": 0,
+      "previous_count": 101
     },
     {
       "sno": "7",
@@ -294,11 +294,11 @@
       "department": "NMDC",
       "category": "Hardware",
       "theme": "Smart Automation",
-      "submitted_count": 169,
+      "submitted_count": 171,
       "max_capacity": 500,
-      "submitted_ideas_str": "169/500",
-      "fill_percentage": 33.8,
-      "slots_left": 331,
+      "submitted_ideas_str": "171/500",
+      "fill_percentage": 34.2,
+      "slots_left": 329,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -307,7 +307,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 169
     },
     {
@@ -332,8 +332,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 106
+      "delta_submissions": 0,
+      "previous_count": 107
     },
     {
       "sno": "9",
@@ -394,11 +394,11 @@
       "department": "Dept of land resources (DoLR)",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 71,
+      "submitted_count": 72,
       "max_capacity": 500,
-      "submitted_ideas_str": "71/500",
-      "fill_percentage": 14.2,
-      "slots_left": 429,
+      "submitted_ideas_str": "72/500",
+      "fill_percentage": 14.4,
+      "slots_left": 428,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -407,7 +407,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 71
     },
     {
@@ -444,11 +444,11 @@
       "department": "Dept of land resources (DoLR)",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 25,
+      "submitted_count": 26,
       "max_capacity": 500,
-      "submitted_ideas_str": "25/500",
-      "fill_percentage": 5.0,
-      "slots_left": 475,
+      "submitted_ideas_str": "26/500",
+      "fill_percentage": 5.2,
+      "slots_left": 474,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -457,7 +457,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 25
     },
     {
@@ -469,11 +469,11 @@
       "department": "Dept of land resources (DoLR)",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 64,
+      "submitted_count": 65,
       "max_capacity": 500,
-      "submitted_ideas_str": "64/500",
-      "fill_percentage": 12.8,
-      "slots_left": 436,
+      "submitted_ideas_str": "65/500",
+      "fill_percentage": 13.0,
+      "slots_left": 435,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -482,7 +482,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 64
     },
     {
@@ -682,8 +682,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 108
+      "delta_submissions": 0,
+      "previous_count": 109
     },
     {
       "sno": "23",
@@ -757,8 +757,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 126
+      "delta_submissions": 0,
+      "previous_count": 127
     },
     {
       "sno": "26",
@@ -807,8 +807,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 232
+      "delta_submissions": 0,
+      "previous_count": 233
     },
     {
       "sno": "28",
@@ -907,8 +907,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 50
+      "delta_submissions": 0,
+      "previous_count": 51
     },
     {
       "sno": "32",
@@ -1032,8 +1032,8 @@
       "dataset_link": "https://consumeraffairs.gov.in/pages/legal-metrology-act and the Legal Metrology (General) Rules,2011",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 100
+      "delta_submissions": 0,
+      "previous_count": 101
     },
     {
       "sno": "37",
@@ -1057,8 +1057,8 @@
       "dataset_link": "Teams may use built-in sensor and scenario datasets available in MathWorks Automated Driving Toolbox, RoadRunner sample scenes, synthetic scenarios created by the team, and publicly available traffic datasets relevant to Indian\nroad conditions.\n-Indian Driving Dataset (IDD): https://idd.insaan.iiit.ac.in/\n-Mendeley traffic dataset:\nhttps://data.mend",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 108
+      "delta_submissions": 0,
+      "previous_count": 109
     },
     {
       "sno": "38",
@@ -1094,11 +1094,11 @@
       "department": "Department of Higher & Technical Education",
       "category": "Hardware",
       "theme": "Smart Automation",
-      "submitted_count": 177,
+      "submitted_count": 178,
       "max_capacity": 500,
-      "submitted_ideas_str": "177/500",
-      "fill_percentage": 35.4,
-      "slots_left": 323,
+      "submitted_ideas_str": "178/500",
+      "fill_percentage": 35.6,
+      "slots_left": 322,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -1107,7 +1107,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 177
     },
     {
@@ -1119,11 +1119,11 @@
       "department": "Department of Higher & Technical Education",
       "category": "Hardware",
       "theme": "Clean & Green Technology",
-      "submitted_count": 226,
+      "submitted_count": 227,
       "max_capacity": 500,
-      "submitted_ideas_str": "226/500",
-      "fill_percentage": 45.2,
-      "slots_left": 274,
+      "submitted_ideas_str": "227/500",
+      "fill_percentage": 45.4,
+      "slots_left": 273,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -1132,7 +1132,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 226
     },
     {
@@ -1194,11 +1194,11 @@
       "department": "Department of Higher & Technical Education",
       "category": "Software",
       "theme": "Smart Education",
-      "submitted_count": 287,
+      "submitted_count": 288,
       "max_capacity": 500,
-      "submitted_ideas_str": "287/500",
-      "fill_percentage": 57.4,
-      "slots_left": 213,
+      "submitted_ideas_str": "288/500",
+      "fill_percentage": 57.6,
+      "slots_left": 212,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -1207,8 +1207,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 4,
-      "previous_count": 283
+      "delta_submissions": 1,
+      "previous_count": 287
     },
     {
       "sno": "44",
@@ -1407,8 +1407,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 58
+      "delta_submissions": 0,
+      "previous_count": 59
     },
     {
       "sno": "52",
@@ -1469,11 +1469,11 @@
       "department": "Department of Defence R&D",
       "category": "Software",
       "theme": "Robotics and Drones",
-      "submitted_count": 98,
+      "submitted_count": 99,
       "max_capacity": 500,
-      "submitted_ideas_str": "98/500",
-      "fill_percentage": 19.6,
-      "slots_left": 402,
+      "submitted_ideas_str": "99/500",
+      "fill_percentage": 19.8,
+      "slots_left": 401,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -1483,7 +1483,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 1,
-      "previous_count": 97
+      "previous_count": 98
     },
     {
       "sno": "55",
@@ -1557,8 +1557,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 109
+      "delta_submissions": 0,
+      "previous_count": 110
     },
     {
       "sno": "58",
@@ -1569,11 +1569,11 @@
       "department": "National Institute of Ocean Technology (NIOT)",
       "category": "Hardware",
       "theme": "Robotics and Drones",
-      "submitted_count": 34,
+      "submitted_count": 35,
       "max_capacity": 500,
-      "submitted_ideas_str": "34/500",
-      "fill_percentage": 6.8,
-      "slots_left": 466,
+      "submitted_ideas_str": "35/500",
+      "fill_percentage": 7.0,
+      "slots_left": 465,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -1582,7 +1582,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 34
     },
     {
@@ -1594,11 +1594,11 @@
       "department": "National Centre for Polar andOcean Research (NCPOR)",
       "category": "Software",
       "theme": "Transportation & Logistics",
-      "submitted_count": 61,
+      "submitted_count": 62,
       "max_capacity": 500,
-      "submitted_ideas_str": "61/500",
-      "fill_percentage": 12.2,
-      "slots_left": 439,
+      "submitted_ideas_str": "62/500",
+      "fill_percentage": 12.4,
+      "slots_left": 438,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -1607,7 +1607,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 61
     },
     {
@@ -1719,11 +1719,11 @@
       "department": "National Centre for Polar andOcean Research (NCPOR)",
       "category": "Hardware",
       "theme": "Robotics and Drones",
-      "submitted_count": 20,
+      "submitted_count": 21,
       "max_capacity": 500,
-      "submitted_ideas_str": "20/500",
-      "fill_percentage": 4.0,
-      "slots_left": 480,
+      "submitted_ideas_str": "21/500",
+      "fill_percentage": 4.2,
+      "slots_left": 479,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -1733,7 +1733,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 1,
-      "previous_count": 19
+      "previous_count": 20
     },
     {
       "sno": "65",
@@ -1894,11 +1894,11 @@
       "department": "India Meteorological Department",
       "category": "Software",
       "theme": "Disaster Management",
-      "submitted_count": 70,
+      "submitted_count": 71,
       "max_capacity": 500,
-      "submitted_ideas_str": "70/500",
-      "fill_percentage": 14.0,
-      "slots_left": 430,
+      "submitted_ideas_str": "71/500",
+      "fill_percentage": 14.2,
+      "slots_left": 429,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -1907,7 +1907,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 70
     },
     {
@@ -1957,8 +1957,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 49
+      "delta_submissions": 0,
+      "previous_count": 51
     },
     {
       "sno": "74",
@@ -2244,11 +2244,11 @@
       "department": "National Centre for Medium Range Weather Forecasting (NCMRWF)",
       "category": "Software",
       "theme": "Disaster Management",
-      "submitted_count": 101,
+      "submitted_count": 102,
       "max_capacity": 500,
-      "submitted_ideas_str": "101/500",
-      "fill_percentage": 20.2,
-      "slots_left": 399,
+      "submitted_ideas_str": "102/500",
+      "fill_percentage": 20.4,
+      "slots_left": 398,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -2257,7 +2257,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 101
     },
     {
@@ -2319,11 +2319,11 @@
       "department": "National Council for Cooperative Training (NCCT)",
       "category": "Hardware",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 30,
+      "submitted_count": 31,
       "max_capacity": 500,
-      "submitted_ideas_str": "30/500",
-      "fill_percentage": 6.0,
-      "slots_left": 470,
+      "submitted_ideas_str": "31/500",
+      "fill_percentage": 6.2,
+      "slots_left": 469,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -2332,7 +2332,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 30
     },
     {
@@ -2344,11 +2344,11 @@
       "department": "National Council for Cooperative Training (NCCT)",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 289,
+      "submitted_count": 290,
       "max_capacity": 500,
-      "submitted_ideas_str": "289/500",
-      "fill_percentage": 57.8,
-      "slots_left": 211,
+      "submitted_ideas_str": "290/500",
+      "fill_percentage": 58.0,
+      "slots_left": 210,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -2358,7 +2358,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 1,
-      "previous_count": 288
+      "previous_count": 289
     },
     {
       "sno": "90",
@@ -2369,20 +2369,20 @@
       "department": "Department of Social Justice and Empowerment",
       "category": "Software",
       "theme": "Heritage & Culture",
-      "submitted_count": 300,
+      "submitted_count": 301,
       "max_capacity": 500,
-      "submitted_ideas_str": "300/500",
-      "fill_percentage": 60.0,
-      "slots_left": 200,
-      "competition": "High",
-      "competition_desc": "Competitive",
+      "submitted_ideas_str": "301/500",
+      "fill_percentage": 60.2,
+      "slots_left": 199,
+      "competition": "Crowded",
+      "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
       "description": "• Background The government actively supports the socio-economic upliftment of marginalized communities,particularly micro-entrepreneurs, artisans, and weavers. Financial assistance is provided to establish small-scale manufacturing and handicraft units. To help these beneficiaries sell their goods, market exposure is facilitated through periodic physical exhibitions, cluster development programs, and trade fairs (such as Shilp Samagam, Surajkund Mela, and Dilli Haat).While physical exhibitions provide a temporary boost in sales, these micro-entrepreneurs lack continuous, year-round access to broader digital markets. Transitioning to the digital economy is hindered by low digital literacy, language barriers, and a lack of technical skills required to professionally photograph, price, and catalog products for modern e-commerce. • Challenge There is a critical need to bridge the gap between traditional craftsmanship and modern digital commerce. Beneficiaries struggle to present their products competitively online. They often fail to capture high-quality images, write compelling product descriptions, or understand dynamic market pricing.The challenge is to build an intuitive, AI-driven mobile application that acts as a 'virtual business manager' for these artisans. The app must empower them to seamlessly digitize their inventory, optimize their listings using AI, and connect directly with larger B2B buyers or government e-marketplaces without requiring advanced technical knowledge. • Expected Solution Participants are expected to develop an AI-powered, cross-platform mobile application supported by a robust, scalable backend architecture. To ensure high adoption among low-literacy users, the application must feature a highly responsive, minimalist UI/UX design (incorporating modern, clean visual hierarchies and accessible layouts). Key features should include: 1. AI Image Enhancer & Studio: A built-in camera module that utilizes AI to automatically remove cluttered backgrounds, correct lighting, and format product photos (e.g., textiles,handicrafts) to professional e-commerce standards. 2. Multilingual Auto-Cataloger: An NLP-based engine that allows artisans to describe their product via voice notes in regional languages. The AI should translate and generate SEO-friendly, professional product descriptions in English and Hindi. 3. Dynamic Pricing Assistant: A machine learning algorithm that analyzes the uploaded product image and description to suggest an optimal, competitive selling price based on current market trends and raw material costs. • Impact Goals • Provide marginalized micro-entrepreneurs with a continuous, year-round digital sales channel,reducing their dependency on periodic physical fairs. • Drastically lower the barrier to entry for digital commerce through intuitive AI automation. • Improve digital literacy and financial independence, ultimately increasing the average annual income of the target demographic.",
       "youtube_link": "",
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 300
     },
     {
@@ -2394,20 +2394,20 @@
       "department": "Department of Social Justice and Empowerment",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 150,
+      "submitted_count": 151,
       "max_capacity": 500,
-      "submitted_ideas_str": "150/500",
-      "fill_percentage": 30.0,
-      "slots_left": 350,
-      "competition": "Medium",
-      "competition_desc": "Moderate Competition",
+      "submitted_ideas_str": "151/500",
+      "fill_percentage": 30.2,
+      "slots_left": 349,
+      "competition": "High",
+      "competition_desc": "Competitive",
       "deadline": "30 September 2026",
       "description": "• Background The government actively promotes the economic empowerment of marginalized communities by providing concessional credit for income-generating activities. Under various schemes,beneficiaries are required to contribute a small margin money fractionâ€”typically 10% of the total project costâ€”while the State Channelizing agencies (SCAs) Channelizing agencies(CAs) provide the remaining 90% as a concessional loan. For example, if an entrepreneur wishes to establish a ?10,00,00 enterprise, they must possess ?1,00,00 as their 10% contribution, making them eligible for a ?9,00,00 loan. These loans are categorized into specific tiers: ? Micro Finance Scheme: For small units with a project cost up to ?1.40 lakh. The funding agency provides up to 90% (maximum ?1.25 lakh) at a concessional interest rate of 6.5% per annum for the beneficiary, to be repaid over 3 years (including a 3-month moratorium). ? Term Loan Scheme: For larger projects costing between ?1.40 lakh and ?50.00 lakh. The agency provides up to 90% (maximum ?45 lakh) at an interest rate of 8% per annum, to be repaid over 7 years (including a 6-month moratorium). However, despite the availability of capital, many first-time rural entrepreneurs face a high rate of business stagnation. This is due to a profound lack of formal market research tailored to their specific geographical reality, compounded by poor financial literacy regarding loan structuring,margin requirements, and repayment schedules. • Challenge Beneficiaries often select business activities based on anecdotal success rather than data-driven market demand, and they struggle to calculate exactly how much capital they need or which scheme they qualify for. A prospective entrepreneur in a specific Gram Panchayat (village) lacks the analytical tools to determine local market saturation, optimal pricing, localized threats, and their precise financial eligibility. There is a critical need for an intelligent tool that democratizes institutional-grade business consulting. The challenge is to build a hyper-local AI Assistant accompanied by a Smart Scheme Calculator that guides the user through a comprehensive business feasibility study and financial structuring plan before they apply for funding. • Expected Solution Participants are required to develop an NLP-powered, multilingual AI Business Advisory Assistant tailored for rural and semi-urban geographies. The system should take basic inputs from the user: Geographic Location (Village/Block/District), Available Margin Capital (e.g., ?1,00,000), and the Proposed Business Category (e.g., Dairy, Retail, Textiles etc). The application must feature two core modules: Module 1: Hyper-Local Business Feasibility Report The AI must dynamically generate a localized strategy encompassing: 1. Market Reach: Estimating the immediate consumer base within a 5â€“10 km radius of the village/block and identifying primary distribution channels. 2. Opportunity Analysis: Highlighting unserved or underserved niches within the chosen business sector in that specific local economy. 3. General Business Analysis (SWOT): A foundational breakdown of Strengths, Weaknesses,Opportunities, and Threats tailored to the specific micro-enterprise budget. 4. Threats Identification: Pinpointing local risks such as supply chain bottlenecks, seasonal demand fluctuations, or dependency on single buyers. 5. Competitor Mapping: Using localized demographic and economic data to estimate the density of existing similar businesses in the block. 6. Product Market Value: Suggesting optimal pricing strategies and predicting the local market value of the goods/services based on regional purchasing power. Module 2: Smart Financial Calculator & Scheme Router An integrated financial engine that automatically processes the user's 'Available Margin Capital' to output a clear financial roadmap: 7. Financial Structuring: Automatically calculates the total feasible Project Cost (Available Margin / 10%) and the Maximum Loan Amount (90% of Project Cost). Example: If the user inputs ?1,00,00 as available capital, the tool establishes a ?10,00,00 Project Cost and a ?9,00,00 loan eligibility. Scheme Auto-Selection: Routes the user to the correct scheme based on the calculated Project Cost. Logic A: If Project Cost ? ?1.40 Lakh -> Selects Micro Finance Scheme (6.5% interest, 3-year tenure, 3-month moratorium). Logic B: If Project Cost > ?1.40 Lakh and ? ?50.00 Lakh -> Selects Term Loan Scheme (8% interest, 7-year tenure, 6-month moratorium). EMI & Moratorium Generator: Outlines the expected quarterly repayment schedule, operational costs, and working capital requirements, factoring in the specific moratorium periods. • Impact Goals ? Reduce the failure rate of newly funded micro-enterprises by ensuring beneficiaries choose viable, locally relevant business models based on data. ? Eliminate financial confusion by clearly mapping a beneficiary's available cash (10%) to their maximum borrowing capacity (90%) and exact repayment obligations. ? Empower marginalized youth with enterprise intelligence, fostering a culture of data-backed, financially sound entrepreneurship at the grassroots level.",
       "youtube_link": "",
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 150
     },
     {
@@ -2419,11 +2419,11 @@
       "department": "Department of Social Justice and Empowerment",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 164,
+      "submitted_count": 165,
       "max_capacity": 500,
-      "submitted_ideas_str": "164/500",
-      "fill_percentage": 32.8,
-      "slots_left": 336,
+      "submitted_ideas_str": "165/500",
+      "fill_percentage": 33.0,
+      "slots_left": 335,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -2432,7 +2432,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 164
     },
     {
@@ -2469,11 +2469,11 @@
       "department": "Department of Social Justice and Empowerment",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 93,
+      "submitted_count": 94,
       "max_capacity": 500,
-      "submitted_ideas_str": "93/500",
-      "fill_percentage": 18.6,
-      "slots_left": 407,
+      "submitted_ideas_str": "94/500",
+      "fill_percentage": 18.8,
+      "slots_left": 406,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -2482,7 +2482,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 93
     },
     {
@@ -2494,11 +2494,11 @@
       "department": "Department of Social Justice and Empowerment",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 99,
+      "submitted_count": 100,
       "max_capacity": 500,
-      "submitted_ideas_str": "99/500",
-      "fill_percentage": 19.8,
-      "slots_left": 401,
+      "submitted_ideas_str": "100/500",
+      "fill_percentage": 20.0,
+      "slots_left": 400,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -2507,7 +2507,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 99
     },
     {
@@ -2607,8 +2607,8 @@
       "dataset_link": "CPSE Material Master Data / Sample Material Master Dataset –To be provided by participating CPSEs",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 42
+      "delta_submissions": 0,
+      "previous_count": 43
     },
     {
       "sno": "100",
@@ -2644,11 +2644,11 @@
       "department": "Data Informatics & Innovation Division (DIID)",
       "category": "Software",
       "theme": "Smart Education",
-      "submitted_count": 213,
+      "submitted_count": 215,
       "max_capacity": 500,
-      "submitted_ideas_str": "213/500",
-      "fill_percentage": 42.6,
-      "slots_left": 287,
+      "submitted_ideas_str": "215/500",
+      "fill_percentage": 43.0,
+      "slots_left": 285,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -2657,8 +2657,8 @@
       "dataset_link": "nssta.gov.in, mospi.gov.in",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 212
+      "delta_submissions": 2,
+      "previous_count": 213
     },
     {
       "sno": "102",
@@ -2757,8 +2757,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 50
+      "delta_submissions": 0,
+      "previous_count": 51
     },
     {
       "sno": "106",
@@ -2769,11 +2769,11 @@
       "department": "Cyber Security Cell",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 290,
+      "submitted_count": 291,
       "max_capacity": 500,
-      "submitted_ideas_str": "290/500",
-      "fill_percentage": 58.0,
-      "slots_left": 210,
+      "submitted_ideas_str": "291/500",
+      "fill_percentage": 58.2,
+      "slots_left": 209,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -2782,7 +2782,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 290
     },
     {
@@ -2794,11 +2794,11 @@
       "department": "Department of Consumer Affairs (DoCA)",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 121,
+      "submitted_count": 122,
       "max_capacity": 500,
-      "submitted_ideas_str": "121/500",
-      "fill_percentage": 24.2,
-      "slots_left": 379,
+      "submitted_ideas_str": "122/500",
+      "fill_percentage": 24.4,
+      "slots_left": 378,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -2808,7 +2808,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 1,
-      "previous_count": 120
+      "previous_count": 121
     },
     {
       "sno": "108",
@@ -2869,11 +2869,11 @@
       "department": "Department of Animal Husbandry & Dairying",
       "category": "Hardware",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 147,
+      "submitted_count": 148,
       "max_capacity": 500,
-      "submitted_ideas_str": "147/500",
-      "fill_percentage": 29.4,
-      "slots_left": 353,
+      "submitted_ideas_str": "148/500",
+      "fill_percentage": 29.6,
+      "slots_left": 352,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -2882,7 +2882,7 @@
       "dataset_link": "Dairy temperature monitoring and milk quality datasets collected from local dairy cooperatives or experimental field trials.",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 147
     },
     {
@@ -2907,8 +2907,8 @@
       "dataset_link": "Additional Information regarding PS\nhttps://drive.google.com/drive/folders/1KrErp9hRfLlaWw3gqvWFo1EpQiU1qtbG",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 34
+      "delta_submissions": 0,
+      "previous_count": 35
     },
     {
       "sno": "112",
@@ -2994,11 +2994,11 @@
       "department": "Autodesk Education Experience",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 60,
+      "submitted_count": 61,
       "max_capacity": 500,
-      "submitted_ideas_str": "60/500",
-      "fill_percentage": 12.0,
-      "slots_left": 440,
+      "submitted_ideas_str": "61/500",
+      "fill_percentage": 12.2,
+      "slots_left": 439,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -3007,7 +3007,7 @@
       "dataset_link": "Additional Information regarding PS\nhttps://drive.google.com/drive/folders/1KYkkQjRbpq--YRF5sgVndjLGgItqLr1b",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 60
     },
     {
@@ -3069,11 +3069,11 @@
       "department": "Mangalore Refinery and Petrochemicals Limited (MRPL)",
       "category": "Hardware",
       "theme": "Smart Automation",
-      "submitted_count": 64,
+      "submitted_count": 66,
       "max_capacity": 500,
-      "submitted_ideas_str": "64/500",
-      "fill_percentage": 12.8,
-      "slots_left": 436,
+      "submitted_ideas_str": "66/500",
+      "fill_percentage": 13.2,
+      "slots_left": 434,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -3082,7 +3082,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 64
     },
     {
@@ -3207,8 +3207,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 31
+      "delta_submissions": 0,
+      "previous_count": 32
     },
     {
       "sno": "124",
@@ -3244,11 +3244,11 @@
       "department": "Bharat Electronics Limited",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 72,
+      "submitted_count": 73,
       "max_capacity": 500,
-      "submitted_ideas_str": "72/500",
-      "fill_percentage": 14.4,
-      "slots_left": 428,
+      "submitted_ideas_str": "73/500",
+      "fill_percentage": 14.6,
+      "slots_left": 427,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -3257,7 +3257,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 72
     },
     {
@@ -3382,8 +3382,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 53
+      "delta_submissions": 0,
+      "previous_count": 54
     },
     {
       "sno": "131",
@@ -3394,11 +3394,11 @@
       "department": "Maharashtra State Innovation Society, Department of Skills, Employment, Entrepreneurship and Innovation",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 417,
+      "submitted_count": 418,
       "max_capacity": 500,
-      "submitted_ideas_str": "417/500",
-      "fill_percentage": 83.4,
-      "slots_left": 83,
+      "submitted_ideas_str": "418/500",
+      "fill_percentage": 83.6,
+      "slots_left": 82,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -3407,8 +3407,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 415
+      "delta_submissions": 1,
+      "previous_count": 417
     },
     {
       "sno": "132",
@@ -3419,11 +3419,11 @@
       "department": "Maharashtra State Innovation Society, Department of Skills, Employment, Entrepreneurship and Innovation",
       "category": "Software",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 432,
+      "submitted_count": 435,
       "max_capacity": 500,
-      "submitted_ideas_str": "432/500",
-      "fill_percentage": 86.4,
-      "slots_left": 68,
+      "submitted_ideas_str": "435/500",
+      "fill_percentage": 87.0,
+      "slots_left": 65,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -3432,8 +3432,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 5,
-      "previous_count": 427
+      "delta_submissions": 3,
+      "previous_count": 432
     },
     {
       "sno": "133",
@@ -3457,8 +3457,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 7,
-      "previous_count": 493
+      "delta_submissions": 0,
+      "previous_count": 500
     },
     {
       "sno": "134",
@@ -3482,8 +3482,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 115
+      "delta_submissions": 0,
+      "previous_count": 116
     },
     {
       "sno": "135",
@@ -3544,11 +3544,11 @@
       "department": "Egreen Quanta",
       "category": "Software",
       "theme": "Transportation & Logistics",
-      "submitted_count": 46,
+      "submitted_count": 47,
       "max_capacity": 500,
-      "submitted_ideas_str": "46/500",
-      "fill_percentage": 9.2,
-      "slots_left": 454,
+      "submitted_ideas_str": "47/500",
+      "fill_percentage": 9.4,
+      "slots_left": 453,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -3557,7 +3557,7 @@
       "dataset_link": "Public/Open Additional Information regarding PS\n\nhttps://drive.google.com/file/d/1iubIiKS9NPr2lpYMVTt2MxgC_qRq5NnM/view?usp=drive_link",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 46
     },
     {
@@ -3607,8 +3607,8 @@
       "dataset_link": "Additional Information Regarding PS\nhttps://drive.google.com/file/d/1IbbUFML0d8J8VcpzS462Ye8RIvAB-qtp/view?usp=drive_link",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 72
+      "delta_submissions": 0,
+      "previous_count": 73
     },
     {
       "sno": "140",
@@ -3707,8 +3707,8 @@
       "dataset_link": "AIS Data\n1.Format of AIS data can be obtained from sample AIS data available to https://marinecadastre.gov/accessais/. \n2.Real AIS if available may be used else synthetic data can be prepared for the region of oil spill to demonstrate the functioning of the algorithm.\nSatellite Imagery Data of Oil spills\n3.Zenodo - Sentinel-1 SAR Oil Spill Dataset P",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 173
+      "delta_submissions": 0,
+      "previous_count": 174
     },
     {
       "sno": "144",
@@ -3769,11 +3769,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 38,
+      "submitted_count": 39,
       "max_capacity": 500,
-      "submitted_ideas_str": "38/500",
-      "fill_percentage": 7.6,
-      "slots_left": 462,
+      "submitted_ideas_str": "39/500",
+      "fill_percentage": 7.8,
+      "slots_left": 461,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -3782,7 +3782,7 @@
       "dataset_link": "https://drive.google.com/file/d/1J7cAKc0i7KPQRjmMU9uvR1yJb7BVgiMs/view?usp=drive_link%22",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 38
     },
     {
@@ -3844,11 +3844,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 45,
+      "submitted_count": 46,
       "max_capacity": 500,
-      "submitted_ideas_str": "45/500",
-      "fill_percentage": 9.0,
-      "slots_left": 455,
+      "submitted_ideas_str": "46/500",
+      "fill_percentage": 9.2,
+      "slots_left": 454,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -3857,7 +3857,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 45
     },
     {
@@ -3944,11 +3944,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 90,
+      "submitted_count": 92,
       "max_capacity": 500,
-      "submitted_ideas_str": "90/500",
-      "fill_percentage": 18.0,
-      "slots_left": 410,
+      "submitted_ideas_str": "92/500",
+      "fill_percentage": 18.4,
+      "slots_left": 408,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -3957,8 +3957,8 @@
       "dataset_link": "-Check nciipc.gov.in; helpdesk1@nciipc.gov.in\n-Use publicly available datasets such as CIC-IDS2017/2018, UNSW-NB15, CTU-13, CICIoT2023, LANL Authentication Dataset, DARPA Intrusion Detection datasets, together with public knowledge bases such as MITRE ATT&CK, CAPEC, CVE/NVD and other open cybersecurity resources.",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 89
+      "delta_submissions": 2,
+      "previous_count": 90
     },
     {
       "sno": "154",
@@ -4044,11 +4044,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 28,
+      "submitted_count": 29,
       "max_capacity": 500,
-      "submitted_ideas_str": "28/500",
-      "fill_percentage": 5.6,
-      "slots_left": 472,
+      "submitted_ideas_str": "29/500",
+      "fill_percentage": 5.8,
+      "slots_left": 471,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -4057,7 +4057,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 28
     },
     {
@@ -4082,8 +4082,8 @@
       "dataset_link": "Will be provided real time. Additional Information regarding PS\nhttps://drive.google.com/file/d/119hjXkLhMW_AhQ4cyYz-XJgcVz4BA-hD/view?usp=drive_link",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 58
+      "delta_submissions": 0,
+      "previous_count": 59
     },
     {
       "sno": "159",
@@ -4094,11 +4094,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 27,
+      "submitted_count": 28,
       "max_capacity": 500,
-      "submitted_ideas_str": "27/500",
-      "fill_percentage": 5.4,
-      "slots_left": 473,
+      "submitted_ideas_str": "28/500",
+      "fill_percentage": 5.6,
+      "slots_left": 472,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -4107,7 +4107,7 @@
       "dataset_link": "Synthetic -   Participants May generate IMAPS, POP3S,SMTPS Data using any E-mail server /client of their interest and capture pcap dump",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 27
     },
     {
@@ -4144,11 +4144,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Disaster Management",
-      "submitted_count": 29,
+      "submitted_count": 30,
       "max_capacity": 500,
-      "submitted_ideas_str": "29/500",
-      "fill_percentage": 5.8,
-      "slots_left": 471,
+      "submitted_ideas_str": "30/500",
+      "fill_percentage": 6.0,
+      "slots_left": 470,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -4157,7 +4157,7 @@
       "dataset_link": "Open source Remote Sensing data (Sentinel, Landsat or any open source satellite image) and ASTER/ STRM or any other DEM.",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 29
     },
     {
@@ -4194,11 +4194,11 @@
       "department": "National Technical Research Organisation (NTRO)",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 14,
+      "submitted_count": 15,
       "max_capacity": 500,
-      "submitted_ideas_str": "14/500",
-      "fill_percentage": 2.8,
-      "slots_left": 486,
+      "submitted_ideas_str": "15/500",
+      "fill_percentage": 3.0,
+      "slots_left": 485,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -4207,7 +4207,7 @@
       "dataset_link": "App link-  https://www.worldmonitor.app\nSource Code:  https://github.com/koala73/worldmonitor",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 14
     },
     {
@@ -4294,11 +4294,11 @@
       "department": "Department of Space / Indian Space Research Organisation",
       "category": "Software",
       "theme": "Space Technology",
-      "submitted_count": 235,
+      "submitted_count": 237,
       "max_capacity": 500,
-      "submitted_ideas_str": "235/500",
-      "fill_percentage": 47.0,
-      "slots_left": 265,
+      "submitted_ideas_str": "237/500",
+      "fill_percentage": 47.4,
+      "slots_left": 263,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -4307,7 +4307,7 @@
       "dataset_link": "Training / Fine-Tuning Dataset_x000D_\nBigEarthNet.txt â€” primary dataset for remote-sensing adaptation using co-registered Sentinel-1 SAR, Sentinel-2 multispectral imagery, and diverse text annotations. Link: https://arxiv.org/abs/2603.29630. All datasets are available online open source._x000D_\nPublic Evaluation Benchmarks_x000D_\nâ€¢ VRSBench â€” for",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 235
     },
     {
@@ -4319,11 +4319,11 @@
       "department": "Department of Space / Indian Space Research Organisation",
       "category": "Software",
       "theme": "Smart Vehicles",
-      "submitted_count": 92,
+      "submitted_count": 93,
       "max_capacity": 500,
-      "submitted_ideas_str": "92/500",
-      "fill_percentage": 18.4,
-      "slots_left": 408,
+      "submitted_ideas_str": "93/500",
+      "fill_percentage": 18.6,
+      "slots_left": 407,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -4333,7 +4333,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 1,
-      "previous_count": 91
+      "previous_count": 92
     },
     {
       "sno": "169",
@@ -4444,11 +4444,11 @@
       "department": "Department of Space / Indian Space Research Organisation",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 44,
+      "submitted_count": 45,
       "max_capacity": 500,
-      "submitted_ideas_str": "44/500",
-      "fill_percentage": 8.8,
-      "slots_left": 456,
+      "submitted_ideas_str": "45/500",
+      "fill_percentage": 9.0,
+      "slots_left": 455,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -4457,7 +4457,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 44
     },
     {
@@ -4532,8 +4532,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 97
+      "delta_submissions": 0,
+      "previous_count": 98
     },
     {
       "sno": "177",
@@ -4544,11 +4544,11 @@
       "department": "Qualcomm Inc",
       "category": "Hardware",
       "theme": "Robotics and Drones",
-      "submitted_count": 164,
+      "submitted_count": 166,
       "max_capacity": 500,
-      "submitted_ideas_str": "164/500",
-      "fill_percentage": 32.8,
-      "slots_left": 336,
+      "submitted_ideas_str": "166/500",
+      "fill_percentage": 33.2,
+      "slots_left": 334,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -4557,7 +4557,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 164
     },
     {
@@ -4619,11 +4619,11 @@
       "department": "Qualcomm Inc",
       "category": "Hardware",
       "theme": "Agriculture, FoodTech & Rural Development",
-      "submitted_count": 186,
+      "submitted_count": 187,
       "max_capacity": 500,
-      "submitted_ideas_str": "186/500",
-      "fill_percentage": 37.2,
-      "slots_left": 314,
+      "submitted_ideas_str": "187/500",
+      "fill_percentage": 37.4,
+      "slots_left": 313,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -4632,7 +4632,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 186
     },
     {
@@ -4644,11 +4644,11 @@
       "department": "Qualcomm Inc",
       "category": "Hardware",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 126,
+      "submitted_count": 127,
       "max_capacity": 500,
-      "submitted_ideas_str": "126/500",
-      "fill_percentage": 25.2,
-      "slots_left": 374,
+      "submitted_ideas_str": "127/500",
+      "fill_percentage": 25.4,
+      "slots_left": 373,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -4657,7 +4657,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 126
     },
     {
@@ -4744,11 +4744,11 @@
       "department": "National Security Guard (NSG), Police II Division",
       "category": "Hardware",
       "theme": "Robotics and Drones",
-      "submitted_count": 30,
+      "submitted_count": 31,
       "max_capacity": 500,
-      "submitted_ideas_str": "30/500",
-      "fill_percentage": 6.0,
-      "slots_left": 470,
+      "submitted_ideas_str": "31/500",
+      "fill_percentage": 6.2,
+      "slots_left": 469,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -4758,7 +4758,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 1,
-      "previous_count": 29
+      "previous_count": 30
     },
     {
       "sno": "186",
@@ -4819,11 +4819,11 @@
       "department": "Sashastra Seema Bal (SSB), Police II Division",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 304,
+      "submitted_count": 307,
       "max_capacity": 500,
-      "submitted_ideas_str": "304/500",
-      "fill_percentage": 60.8,
-      "slots_left": 196,
+      "submitted_ideas_str": "307/500",
+      "fill_percentage": 61.4,
+      "slots_left": 193,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -4832,8 +4832,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 303
+      "delta_submissions": 3,
+      "previous_count": 304
     },
     {
       "sno": "189",
@@ -4844,11 +4844,11 @@
       "department": "National Crime Records Bureau (NCRB), Women Safety Division",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 302,
+      "submitted_count": 303,
       "max_capacity": 500,
-      "submitted_ideas_str": "302/500",
-      "fill_percentage": 60.4,
-      "slots_left": 198,
+      "submitted_ideas_str": "303/500",
+      "fill_percentage": 60.6,
+      "slots_left": 197,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -4857,8 +4857,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 3,
-      "previous_count": 299
+      "delta_submissions": 1,
+      "previous_count": 302
     },
     {
       "sno": "190",
@@ -4869,21 +4869,21 @@
       "department": "National Crime Records Bureau (NCRB), Women Safety Division",
       "category": "Software",
       "theme": "Blockchain & Cybersecurity",
-      "submitted_count": 149,
+      "submitted_count": 152,
       "max_capacity": 500,
-      "submitted_ideas_str": "149/500",
-      "fill_percentage": 29.8,
-      "slots_left": 351,
-      "competition": "Medium",
-      "competition_desc": "Moderate Competition",
+      "submitted_ideas_str": "152/500",
+      "fill_percentage": 30.4,
+      "slots_left": 348,
+      "competition": "High",
+      "competition_desc": "Competitive",
       "deadline": "30 September 2026",
       "description": "• Background Law enforcement agencies, courts, legal departments, and investigative organizations handle vast amounts of sensitive documents throughout the lifecycle of a case. These documents may include: • FIRs and police reports • Investigation records • Witness statements • Charge sheets • Court filings • Evidence records • Forensic reports • Legal notices and judgments Many organizations still rely on paper-based systems or fragmented digital storage solutions. This often leads to challenges such as: • Difficulty in locating documents quickly • Unauthorized access to confidential information • Document tampering risks • Lack of version control • Inefficient collaboration between departments • Delays in legal and investigative processes • Poor auditability and compliance tracking As the volume of legal and investigation-related data continues to grow,there is an increasing need for a secure, centralized, and intelligent document management system that ensures data integrity, accessibility,confidentiality, and efficient case management.Modern technologies such as Cloud Computing, Artificial Intelligence (AI), Blockchain, Digital Signatures, and Secure Access Control can significantly improve the management and security of legal and investigative documents. • Description The objective is to develop a Secure Digital Document Management System (DMS) that enables law enforcement agencies, legal institutions, and investigative departments to securely store, organize, manage,retrieve, and share sensitive legal and investigation documents. The system should: • Digitize and centralize document storage. • Ensure secure access and confidentiality. • Prevent unauthorized modifications. • Maintain a complete audit trail of document activities. • Enable efficient document search and retrieval. • Support collaboration among authorized stakeholders. • Ensure compliance with legal and regulatory requirements. The challenge is to create a secure, scalable, and intelligent platform that streamlines document handling while preserving legal validity and evidentiary integrity. • Expected Solution Develop a system to monitor and manage police assets throughout their lifecycle.",
       "youtube_link": "",
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 148
+      "delta_submissions": 3,
+      "previous_count": 149
     },
     {
       "sno": "191",
@@ -4919,11 +4919,11 @@
       "department": "National Disaster Response Force (NDRF), DM Division",
       "category": "Software",
       "theme": "Disaster Management",
-      "submitted_count": 124,
+      "submitted_count": 125,
       "max_capacity": 500,
-      "submitted_ideas_str": "124/500",
-      "fill_percentage": 24.8,
-      "slots_left": 376,
+      "submitted_ideas_str": "125/500",
+      "fill_percentage": 25.0,
+      "slots_left": 375,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -4932,7 +4932,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 124
     },
     {
@@ -5007,8 +5007,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 119
+      "delta_submissions": 0,
+      "previous_count": 120
     },
     {
       "sno": "196",
@@ -5069,11 +5069,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "MedTech / BioTech / HealthTech",
-      "submitted_count": 363,
+      "submitted_count": 368,
       "max_capacity": 500,
-      "submitted_ideas_str": "363/500",
-      "fill_percentage": 72.6,
-      "slots_left": 137,
+      "submitted_ideas_str": "368/500",
+      "fill_percentage": 73.6,
+      "slots_left": 132,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -5082,8 +5082,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 361
+      "delta_submissions": 5,
+      "previous_count": 363
     },
     {
       "sno": "199",
@@ -5132,8 +5132,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 83
+      "delta_submissions": 0,
+      "previous_count": 85
     },
     {
       "sno": "201",
@@ -5169,11 +5169,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 217,
+      "submitted_count": 218,
       "max_capacity": 500,
-      "submitted_ideas_str": "217/500",
-      "fill_percentage": 43.4,
-      "slots_left": 283,
+      "submitted_ideas_str": "218/500",
+      "fill_percentage": 43.6,
+      "slots_left": 282,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -5182,8 +5182,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 215
+      "delta_submissions": 1,
+      "previous_count": 217
     },
     {
       "sno": "203",
@@ -5207,8 +5207,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 51
+      "delta_submissions": 0,
+      "previous_count": 53
     },
     {
       "sno": "204",
@@ -5269,11 +5269,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Disaster Management",
-      "submitted_count": 250,
+      "submitted_count": 251,
       "max_capacity": 500,
-      "submitted_ideas_str": "250/500",
-      "fill_percentage": 50.0,
-      "slots_left": 250,
+      "submitted_ideas_str": "251/500",
+      "fill_percentage": 50.2,
+      "slots_left": 249,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -5282,8 +5282,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 248
+      "delta_submissions": 1,
+      "previous_count": 250
     },
     {
       "sno": "207",
@@ -5294,11 +5294,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Smart Education",
-      "submitted_count": 351,
+      "submitted_count": 354,
       "max_capacity": 500,
-      "submitted_ideas_str": "351/500",
-      "fill_percentage": 70.2,
-      "slots_left": 149,
+      "submitted_ideas_str": "354/500",
+      "fill_percentage": 70.8,
+      "slots_left": 146,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -5307,8 +5307,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 2,
-      "previous_count": 349
+      "delta_submissions": 3,
+      "previous_count": 351
     },
     {
       "sno": "208",
@@ -5319,11 +5319,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Toys & Games",
-      "submitted_count": 79,
+      "submitted_count": 80,
       "max_capacity": 500,
-      "submitted_ideas_str": "79/500",
-      "fill_percentage": 15.8,
-      "slots_left": 421,
+      "submitted_ideas_str": "80/500",
+      "fill_percentage": 16.0,
+      "slots_left": 420,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -5332,7 +5332,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 79
     },
     {
@@ -5344,11 +5344,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Software",
       "theme": "Space Technology",
-      "submitted_count": 62,
+      "submitted_count": 63,
       "max_capacity": 500,
-      "submitted_ideas_str": "62/500",
-      "fill_percentage": 12.4,
-      "slots_left": 438,
+      "submitted_ideas_str": "63/500",
+      "fill_percentage": 12.6,
+      "slots_left": 437,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -5357,7 +5357,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 62
     },
     {
@@ -5432,8 +5432,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 167
+      "delta_submissions": 0,
+      "previous_count": 168
     },
     {
       "sno": "213",
@@ -5544,11 +5544,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Hardware",
       "theme": "Renewable / Sustainable Energy",
-      "submitted_count": 225,
+      "submitted_count": 226,
       "max_capacity": 500,
-      "submitted_ideas_str": "225/500",
-      "fill_percentage": 45.0,
-      "slots_left": 275,
+      "submitted_ideas_str": "226/500",
+      "fill_percentage": 45.2,
+      "slots_left": 274,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -5557,7 +5557,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 225
     },
     {
@@ -5694,11 +5694,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Hardware",
       "theme": "Disaster Management",
-      "submitted_count": 165,
+      "submitted_count": 167,
       "max_capacity": 500,
-      "submitted_ideas_str": "165/500",
-      "fill_percentage": 33.0,
-      "slots_left": 335,
+      "submitted_ideas_str": "167/500",
+      "fill_percentage": 33.4,
+      "slots_left": 333,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -5707,7 +5707,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 165
     },
     {
@@ -5769,11 +5769,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Hardware",
       "theme": "Space Technology",
-      "submitted_count": 33,
+      "submitted_count": 35,
       "max_capacity": 500,
-      "submitted_ideas_str": "33/500",
-      "fill_percentage": 6.6,
-      "slots_left": 467,
+      "submitted_ideas_str": "35/500",
+      "fill_percentage": 7.0,
+      "slots_left": 465,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -5782,7 +5782,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 2,
       "previous_count": 33
     },
     {
@@ -5794,11 +5794,11 @@
       "department": "Indian Army (DGIS)",
       "category": "Software",
       "theme": "Space Technology",
-      "submitted_count": 56,
+      "submitted_count": 57,
       "max_capacity": 500,
-      "submitted_ideas_str": "56/500",
-      "fill_percentage": 11.2,
-      "slots_left": 444,
+      "submitted_ideas_str": "57/500",
+      "fill_percentage": 11.4,
+      "slots_left": 443,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -5807,7 +5807,7 @@
       "dataset_link": "7. Dataset Link. All datasets must be publicly accessible under applicable licences or provided by the organisers. No classified, operational or service-generated data will be used.\n\n7.1. Primary Imagery Sources. Copernicus Sentinel-2 optical imagery and Sentinel-1 SAR; USGS Landsat Collection 2; and NRSC/ISRO Bhuvan open Earth-observation data produc",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 56
     },
     {
@@ -5982,8 +5982,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 56
+      "delta_submissions": 0,
+      "previous_count": 57
     },
     {
       "sno": "235",
@@ -6057,8 +6057,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 27
+      "delta_submissions": 0,
+      "previous_count": 28
     },
     {
       "sno": "238",
@@ -6069,11 +6069,11 @@
       "department": "Ministry of Tribal Affairs",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 39,
+      "submitted_count": 40,
       "max_capacity": 500,
-      "submitted_ideas_str": "39/500",
-      "fill_percentage": 7.8,
-      "slots_left": 461,
+      "submitted_ideas_str": "40/500",
+      "fill_percentage": 8.0,
+      "slots_left": 460,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -6082,7 +6082,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 39
     },
     {
@@ -6094,11 +6094,11 @@
       "department": "Ministry of Tribal Affairs",
       "category": "Software",
       "theme": "Smart Education",
-      "submitted_count": 44,
+      "submitted_count": 45,
       "max_capacity": 500,
-      "submitted_ideas_str": "44/500",
-      "fill_percentage": 8.8,
-      "slots_left": 456,
+      "submitted_ideas_str": "45/500",
+      "fill_percentage": 9.0,
+      "slots_left": 455,
       "competition": "Low",
       "competition_desc": "High Chance / Golden Opportunity",
       "deadline": "30 September 2026",
@@ -6107,7 +6107,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 44
     },
     {
@@ -6132,8 +6132,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 42
+      "delta_submissions": 0,
+      "previous_count": 43
     }
   ]
 }
