@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-09-27T05:53:09.529315+05:30",
-  "last_updated_human": "27 September 2026, 05:53:09 AM IST",
+  "last_updated": "2026-09-27T06:23:14.821605+05:30",
+  "last_updated_human": "27 September 2026, 06:23:14 AM IST",
   "total_problem_statements": 240,
-  "total_submissions": 29887,
+  "total_submissions": 29893,
   "total_capacity": 120000,
-  "new_submissions_in_sync": 13,
-  "active_ps_count": 9,
+  "new_submissions_in_sync": 6,
+  "active_ps_count": 4,
   "software_count": 182,
   "hardware_count": 58,
   "competition_stats": {
@@ -182,8 +182,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 327
+      "delta_submissions": 0,
+      "previous_count": 328
     },
     {
       "sno": "3",
@@ -1082,8 +1082,8 @@
       "dataset_link": "APTOS 2019 Blindness Detection: https://www.kaggle.com/c/aptos2019-\nblindness-detection\nIDRiD (Indian Diabetic Retinopathy Image Dataset): https://ieeedataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid\nDRIVE (Vessel Extraction): https://drive.grand-challenge.org/\nMessidor-2: https://www.adcis.net/en/third-party/messidor2/",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 358
+      "delta_submissions": 0,
+      "previous_count": 359
     },
     {
       "sno": "39",
@@ -1194,11 +1194,11 @@
       "department": "Department of Higher & Technical Education",
       "category": "Software",
       "theme": "Smart Education",
-      "submitted_count": 421,
+      "submitted_count": 424,
       "max_capacity": 500,
-      "submitted_ideas_str": "421/500",
-      "fill_percentage": 84.2,
-      "slots_left": 79,
+      "submitted_ideas_str": "424/500",
+      "fill_percentage": 84.8,
+      "slots_left": 76,
       "competition": "Crowded",
       "competition_desc": "Very High Competition",
       "deadline": "30 September 2026",
@@ -1208,7 +1208,7 @@
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
       "delta_submissions": 3,
-      "previous_count": 418
+      "previous_count": 421
     },
     {
       "sno": "44",
@@ -1619,11 +1619,11 @@
       "department": "National Centre for Polar andOcean Research (NCPOR)",
       "category": "Software",
       "theme": "Smart Automation",
-      "submitted_count": 50,
+      "submitted_count": 51,
       "max_capacity": 500,
-      "submitted_ideas_str": "50/500",
-      "fill_percentage": 10.0,
-      "slots_left": 450,
+      "submitted_ideas_str": "51/500",
+      "fill_percentage": 10.2,
+      "slots_left": 449,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -1632,7 +1632,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 50
     },
     {
@@ -2357,8 +2357,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 366
+      "delta_submissions": 0,
+      "previous_count": 367
     },
     {
       "sno": "90",
@@ -2782,8 +2782,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 362
+      "delta_submissions": 0,
+      "previous_count": 363
     },
     {
       "sno": "107",
@@ -4519,11 +4519,11 @@
       "department": "Department of Space / Indian Space Research Organisation",
       "category": "Software",
       "theme": "Space Technology",
-      "submitted_count": 114,
+      "submitted_count": 115,
       "max_capacity": 500,
-      "submitted_ideas_str": "114/500",
-      "fill_percentage": 22.8,
-      "slots_left": 386,
+      "submitted_ideas_str": "115/500",
+      "fill_percentage": 23.0,
+      "slots_left": 385,
       "competition": "Medium",
       "competition_desc": "Moderate Competition",
       "deadline": "30 September 2026",
@@ -4532,7 +4532,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 114
     },
     {
@@ -4782,8 +4782,8 @@
       "dataset_link": "Anonymized HR datasets, deployment records, leave history, wellness\nsurvey data, workload data, and simulated behavioral datasets.",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 80
+      "delta_submissions": 0,
+      "previous_count": 81
     },
     {
       "sno": "187",
@@ -4857,8 +4857,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 3,
-      "previous_count": 425
+      "delta_submissions": 0,
+      "previous_count": 428
     },
     {
       "sno": "190",
@@ -4882,8 +4882,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 187
+      "delta_submissions": 0,
+      "previous_count": 188
     },
     {
       "sno": "191",
@@ -5282,8 +5282,8 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 1,
-      "previous_count": 306
+      "delta_submissions": 0,
+      "previous_count": 307
     },
     {
       "sno": "207",
@@ -5544,11 +5544,11 @@
       "department": "AICTE, MIC-Student Innovation",
       "category": "Hardware",
       "theme": "Renewable / Sustainable Energy",
-      "submitted_count": 257,
+      "submitted_count": 258,
       "max_capacity": 500,
-      "submitted_ideas_str": "257/500",
-      "fill_percentage": 51.4,
-      "slots_left": 243,
+      "submitted_ideas_str": "258/500",
+      "fill_percentage": 51.6,
+      "slots_left": 242,
       "competition": "High",
       "competition_desc": "Competitive",
       "deadline": "30 September 2026",
@@ -5557,7 +5557,7 @@
       "dataset_link": "",
       "contact_info": "",
       "sih_url": "https://sih.gov.in/sih2026PS",
-      "delta_submissions": 0,
+      "delta_submissions": 1,
       "previous_count": 257
     },
     {
